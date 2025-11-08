@@ -3,7 +3,16 @@
 
 
 <head>
-    <meta charset="UTF-8">
+    <meta name="keywords" content="HTML, CSS, JavaScript">
+    <meta name="description" content="Основы CSS Grid — Шаг 1 — Stepik">
+    <meta name="author" content="VViller">
+    <meta name="copyright" content="Copyright © 2025">
+    <meta name="date" content="November, 07, 2025 10:53 Am">
+    <meta name="robots" content="index, follow">
+    <meta name="revisit-after" content="28 day">
+    <meta name="rating" content="general">
+    <meta name="language" content="ru">
+    <meta name="charset" content="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Основы CSS Grid — Шаг 1 — Stepik</title>
@@ -13,75 +22,80 @@
 <body>
 
     <article>
-        <header>
-            <a class="logo" href="#">Мой блог о программировании</a>
-            <h2></h2>
-            <p>Автор: VViller</p>
-            <nav>
-                <a href="https://github.com/Viktor3691" target="_blank">Обо мне</a>
-            </nav>
-        </header>
-        <section>
-            <h3>Введение</h3>
-            <p>Семантические теги делают ваш код...</p>
-        </section>
-        <section>
-            <h3>1. Как сделать аналог атрибута title для вывода подсказок при наведении на любой элемент на странице.
-            </h3>
-            <p>Кастомное оформление подсказок title мы будем делать с помощью псевдоэлементов.</p>
-            <ul>
-                <li mytitle="Первая  подсказка - mytitle">Текст 1</li>
-                <br>
-                <li mytitle="вторая подсказка - mytitle">Текст 2</li>
-                <br>
-                <li mytitle="Третья подсказка - mytitle">Текст 3</li>
-                <br>
-                <li><a href="#" title="Текст подсказки - title" class="a">Текст 4</a></li>
-            </ul>
-        </section>
-        <footer>
-            <p>Опубликовано: 7 ноября 2025</p>
-        </footer>
+        <div class="container">
+            <!---->
+
+            <header>
+                <nav id="main-navbar" class="navbar" aria-label="Общая навигация по сайту">
+                    <picture>
+                        <a class="logo" href="#">Мой блог о программировании</a>
+                    </picture>
+                </nav>
+                <p style="color: rgb(78, 102, 122);">Автор: VViller<br>
+                    <a href="https://github.com/Viktor3691" target="_blank" style="color: rgb(78, 102, 122);">Обо
+                        мне</a>
+                </p>
+
+            </header>
+            <!---->
+
+            <section>
+                <div class="container_text">
+                    <div class="ramka">
+                        <h3>Всплывающая подсказка</h3>
+                        <p>Делаем стилизованную всплывающую подсказку</p>
+                        <p>Самый простой способ для создания всплывающей подсказки, это добавить элементу атрибут title,
+                            но вид такой подсказки зависит от браузера, появляется с небольшой задержкой и не может быть
+                            стилизован.</p>
+                    </div>
+                    <div class="ramka"> HTML
+                        <br>
+                        <br>
+                        &lt;p title="Нативная подсказка"&gt;Наведи на меня&lt;/p&gt;
+                        <br>
+                    </div>
+                    <div class="ramka">
+                        <p title="Нативная подсказка">Наведи на меня</p>
+                    </div>
+                    <p>Для создания кастомной всплывающей подсказки, напишем элементу в html <a
+                            href="https://html-css.blog/html/polzovatelskij-data-atribut/" target="_blank"
+                            rel="noopener noreferrer">пользовательский data атрибут</a> data-tooltip с текстом, который
+                        мы хотим выводить, а в css добавим псевдоэлемент <span class="span"> ::after, </span>которому
+                        передадим значение из добавленного атрибута.</p>
+                </div>
+
+
+
+                <!---->
+
+                <div class="container_text">
+                    <section>
+
+                    </section>
+                </div>
+
+                <section>
+                    <h3>1. Как сделать аналог атрибута title для вывода подсказок при наведении на любой элемент на
+                        странице.
+                    </h3>
+                    <p>Кастомное оформление подсказок title мы будем делать с помощью псевдоэлементов.</p>
+                    <ul>
+                        <li mytitle="Первая  подсказка - mytitle">Текст 1</li>
+                        <br>
+                        <li mytitle="вторая подсказка - mytitle">Текст 2</li>
+                        <br>
+                        <li mytitle="Третья подсказка - mytitle">Текст 3</li>
+                        <br>
+                        <li><a href="#" title="Текст подсказки - title" class="a">Текст 4</a></li>
+                    </ul>
+                </section>
+                <footer>
+                    <p>Опубликовано: 7 ноября 2025</p>
+                </footer>
+
+        </div>
+
     </article>
-
-
-
-
-
-
-
-
-
-
-    <!--
-    <header>
-        <h5>Мой блог о программировании</h5>
-        <nav>
-            <a href="/">Главная</a>
-            <a href="https://github.com/Viktor3691" target="_blank">Обо мне</a>
-        </nav>
-        <time>07.11.2025</time>
-    </header>
-
-    <h1>Всплывающая подсказка</h1>
-
-    <h3>1. Как сделать аналог атрибута title для вывода подсказок при наведении на любой элемент на странице.</h3>
-    <p>Кастомное оформление подсказок title мы будем делать с помощью псевдоэлементов.</p>
-    <ul>
-        <li mytitle="Первая  подсказка - mytitle">Текст 1</li>
-        <br>
-        <li mytitle="вторая подсказка - mytitle">Текст 2</li>
-        <br>
-        <li mytitle="Третья подсказка - mytitle">Текст 3</li>
-        <br>
-        <li><a href="#" title="Текст подсказки - title" class="a">Текст 4</a></li>
-    </ul> -->
-
-
-
-
-
-
 
 
 
