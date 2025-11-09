@@ -27,8 +27,7 @@
 }
 
 main {
-  height: 100vh;
-  background: #ffffffff;
+  width: 100%;
 }
 
 .container {
@@ -184,4 +183,9 @@ kbd {
 }
 p {
   max-width: max-content;
+}
+@media (prefers-reduced-motion: no-preference) {
+  :root {
+    scroll-behavior: smooth;
+  }
 }
