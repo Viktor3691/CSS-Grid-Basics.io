@@ -8,7 +8,7 @@
   margin: 0 auto;
 }
 .header {
-  background: #000;
+  background: #636bd8;
   position: sticky;
   top: 0;
   z-index: 10; /* Не так высокое значение как в "фиксированном" варианте, но всё же выше обычного контента */

@@ -4,11 +4,12 @@
 
 <head>
     <meta name="keywords" content="HTML, CSS, JavaScript">
-    <meta name="description" content="Основы CSS Grid — Шаг 1 — Stepik">
+    <meta name="description"
+        content="Основы CSS Grid.  Атрибут title для вывода подсказок.  Как сделать аналог атрибута title для вывода подсказок. Как сделать плавную прокрутку страницы по якорям без JS, свойство scroll-behavior на CSS. Все свойства CSS Grid.">
     <meta name="author" content="VViller">
     <meta name="copyright" content="Copyright © 2025">
     <meta name="date" content="November, 07, 2025 10:53 Am">
-    <meta name="robots" content="index, follow">
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
     <meta name="revisit-after" content="28 day">
     <meta name="rating" content="general">
     <meta name="language" content="ru">
@@ -25,29 +26,31 @@
         <div class="container">
             <!---->
 
-            <header>
+
+            <header class="header">
                 <nav id="main-navbar" class="navbar" aria-label="Общая навигация по сайту">
                     <picture>
                         <a class="logo" href="#">Мой блог о программировании</a>
                     </picture>
                 </nav>
-                <p style="color: rgb(78, 102, 122);">Автор: VViller<br>
-                    <a href="https://github.com/Viktor3691" target="_blank" style="color: rgb(78, 102, 122);">Обо
+                <p style="color: rgb(250, 253, 255);">Автор: VViller<br>
+                    <a href="https://github.com/Viktor3691" target="_blank" style="color: rgb(251, 252, 253);">Обо
                         мне</a>
                 </p>
+
 
             </header>
             <!---->
 
             <section>
                 <div class="container_text">
-                    <div class="ramka">
-                        <h3>Всплывающая подсказка</h3>
-                        <p>Делаем стилизованную всплывающую подсказку</p>
-                        <p>Самый простой способ для создания всплывающей подсказки, это добавить элементу атрибут title,
-                            но вид такой подсказки зависит от браузера, появляется с небольшой задержкой и не может быть
-                            стилизован.</p>
-                    </div>
+
+                    <h3>Всплывающая подсказка</h3>
+                    <p>Делаем стилизованную всплывающую подсказку</p>
+                    <p>Самый простой способ для создания всплывающей подсказки, это добавить элементу атрибут title,
+                        но вид такой подсказки зависит от браузера, появляется с небольшой задержкой и не может быть
+                        стилизован.</p>
+
                     <div class="ramka"> HTML
                         <br>
                         <br>
@@ -62,36 +65,122 @@
                             rel="noopener noreferrer">пользовательский data атрибут</a> data-tooltip с текстом, который
                         мы хотим выводить, а в css добавим псевдоэлемент <span class="span"> ::after, </span>которому
                         передадим значение из добавленного атрибута.</p>
+
+                    <div class="ramka">
+                        &lt;p data-tooltip="Текст подсказки"&gt;Наведи на меня&lt;/p&gt;
+                    </div>
+
+                    <div class="ramka">
+                        &lt;style&gt;
+                        [data-tooltip]::after {
+                        content: attr(data-tooltip);
+                        }
+                        &lt;/style&gt;
+                    </div>
+
+                    <p>Получаем такой результат: текст из атрибута вывелся на страницу.</p>
+
+                    <div class="ramka">
+                        <p data-tooltip=" Текст подсказки "> Наведи на меня</p>
+                    </div>
+
+                    <style>
+                        [data-tooltip]::after {
+                            content: attr(data-tooltip);
+                        }
+                    </style>
+
+                    <p>Теперь скроем подсказку, сделаем чтобы она появлялась при наведении, немного стилизуем её и
+                        готово:</p>
+
+                    <style>
+                        [data-tooltip] {
+                            position: relative;
+                            cursor: pointer;
+                            width: max-content;
+                        }
+
+                        [data-tooltip]:hover::after,
+                        [data-tooltip]:hover::before {
+                            opacity: 1;
+                            visibility: visible;
+                        }
+
+                        [data-tooltip]::after,
+                        [data-tooltip]::before {
+                            position: absolute;
+                            left: 50%;
+                            display: block;
+                            opacity: 0;
+                            visibility: hidden;
+                            transition: .3s;
+                            transform: translateX(-50%);
+                        }
+
+                        [data-tooltip]::after {
+                            bottom: -54px;
+                            content: attr(data-tooltip);
+                            padding: 8px;
+                            border-radius: 8px;
+                            background: orange;
+                            text-align: center;
+                            width: max-content;
+                        }
+
+                        [data-tooltip]::before {
+                            bottom: -10px;
+                            content: '';
+                            border: 10px solid transparent;
+                            border-bottom: 10px solid orange;
+                        }
+                    </style>
+
+                    <div class="ramka">
+                        <p data-tooltip=" Текст подсказки "> Наведи на меня</p>
+                    </div>
+
                 </div>
+
+
+
+
+
+
+
             </section>
 
 
-            <!---->
 
-            <div class="container_text">
-                <section>
 
-                </section>
-            </div>
+        </div>
 
+
+        <!---->
+
+        <div class="container_text">
             <section>
-                <h3>1. Как сделать аналог атрибута title для вывода подсказок при наведении на любой элемент на
-                    странице.
-                </h3>
-                <p>Кастомное оформление подсказок title мы будем делать с помощью псевдоэлементов.</p>
-                <ul>
-                    <li mytitle="Первая  подсказка - mytitle">Текст 1</li>
-                    <br>
-                    <li mytitle="вторая подсказка - mytitle">Текст 2</li>
-                    <br>
-                    <li mytitle="Третья подсказка - mytitle">Текст 3</li>
-                    <br>
-                    <li><a href="#" title="Текст подсказки - title" class="a">Текст 4</a></li>
-                </ul>
+
             </section>
-            <footer>
-                <p>Опубликовано: 7 ноября 2025</p>
-            </footer>
+        </div>
+
+        <section>
+            <h3>1. Как сделать аналог атрибута title для вывода подсказок при наведении на любой элемент на
+                странице.
+            </h3>
+            <p>Кастомное оформление подсказок title мы будем делать с помощью псевдоэлементов.</p>
+            <ul>
+                <li mytitle="Первая  подсказка - mytitle">Текст 1</li>
+                <br>
+                <li mytitle="вторая подсказка - mytitle">Текст 2</li>
+                <br>
+                <li mytitle="Третья подсказка - mytitle">Текст 3</li>
+                <br>
+                <li><a href="#" title="Текст подсказки - title" class="a">Текст 4</a></li>
+            </ul>
+        </section>
+        <footer>
+            <p>Опубликовано: 7 ноября 2025</p>
+        </footer>
 
         </div>
 
