@@ -1,7 +1,42 @@
 {
   "MD033": {
     "allowed_elements": [
-      "img"
+      "img",
+      "a",
+      "iframe",
+      "svg",
+      "div",
+      "span",
+      "br",
+      "hr",
+      "ul",
+      "li",
+      "ol",
+      "p",
+      "h1",
+      "h2",
+      "h3",
+      "h4",
+      "h5" ,
+      "h6",
+      "strong",
+      "blockquote",
+      "header",
+      "footer",
+      "nav",
+      "main",
+      "section",
+      "article",
+      "picture",
+      "style",
+      "dl",
+      "dt",
+      "dd",
+      "b",
+      "pre"
+
+
+
     ]
   }
 }
