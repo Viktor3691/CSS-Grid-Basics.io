@@ -64,38 +64,44 @@
                             <li><a href="#title2">Как сделать аналог атрибута title</a></li>
                             <li><a href="#title3">Как сделать плавную прокрутку страницы по якорям без JS.</a></li>
                             <li><a href="#title4">Все свойства CSS Grid</a></li>
-                            <li><a href="#title41">Введение</a></li>
-                            <li><a href="#title42">Сравнение с Flexbox</a></li>
-                            <li><a href="#title43">Поддержка браузерами</a></li>
-                            <li><a href="#title44">Свойства для контейнера</a></li>
-                            <ul>
-                                <li><a href="#prop_1">display</a></li>
-                                <li><a href="#prop_2">grid-template-columns<br>grid-template-rows</a></li>
-                                <li><a href="#prop_3">grid-template-areas</a></li>
-                                <li><a href="#prop_4">grid-template</a></li>
-                                <li><a href="#prop_5">column-gap<br>row-gap<br>gap</a></li>
-                                <li><a href="#prop_6">grid-auto-columns<br>grid-auto-rows</a></li>
-                                <li><a href="#prop_7">grid-auto-flow</a></li>
-                                <li><a href="#prop_8">grid</a></li>
-                                <li><a href="#prop_9">justify-items<br>align-items<br>place-items</a></li>
-                                <li><a href="#prop_10">justify-content<br>align-content<br>place-content</a>
+
+                            <ol>
+                                <li><a href="#title41">Введение</a></li>
+                                <li><a href="#title42">Сравнение с Flexbox</a></li>
+                                <li><a href="#title43">Поддержка браузерами</a></li>
+                                <li><a href="#title44">Свойства для контейнера</a>
+                                    <ol>
+                                        <li><a href="#prop_1">display</a></li>
+                                        <li><a href="#prop_2">grid-template-columns<br>grid-template-rows</a></li>
+                                        <li><a href="#prop_3">grid-template-areas</a></li>
+                                        <li><a href="#prop_4">grid-template</a></li>
+                                        <li><a href="#prop_5">column-gap<br>row-gap<br>gap</a></li>
+                                        <li><a href="#prop_6">grid-auto-columns<br>grid-auto-rows</a></li>
+                                        <li><a href="#prop_7">grid-auto-flow</a></li>
+                                        <li><a href="#prop_8">grid</a></li>
+                                        <li><a href="#prop_9">justify-items<br>align-items<br>place-items</a></li>
+                                        <li><a href="#prop_10">justify-content<br>align-content<br>place-content</a>
+                                        </li>
+                                    </ol>
                                 </li>
-                            </ul>
-                            <li><a href="#title45">Свойства для элементов</a></li>
-                            <ul>
-                                <li><a href="#prop_11">grid-area</a></li>
-                                <li><a
-                                        href="#prop_12">grid-column-start<br>grid-column-end<br>grid-row-start<br>grid-row-end</a>
-                                </li>
-                                <li><a href="#prop_13">grid-column<br>grid-row</a></li>
-                                <li><a href="#prop_14">justify-self<br>align-self<br>place-self</a></li>
-                            </ul>
+                            </ol>
+
+
+                            <li><a href="#title45">Свойства для элементов</a>
+                                <ol>
+                                    <li><a href="#prop_11">grid-area</a></li>
+                                    <li><a
+                                            href="#prop_12">grid-column-start<br>grid-column-end<br>grid-row-start<br>grid-row-end</a>
+                                    </li>
+                                    <li><a href="#prop_13">grid-column<br>grid-row</a></li>
+                                    <li><a href="#prop_14">justify-self<br>align-self<br>place-self</a></li>
+                                </ol>
+                            </li>
+
                         </ol>
                     </div>
                     <!---->
-
-
-
+                    <!--  -->
 
                     <h3 id="title1"><a href="https://html-css.blog/css/vsplyvayushhaya-podskazka-na-html-i-css//"
                             target="_blank" rel="noopener noreferrer">1. Всплывающая подсказка</a></h3>
@@ -239,7 +245,9 @@
 
                     <div class="ramka">
                         <li>
-                            <p data-tooltip=" Текст подсказки "> Наведи на меня</p>
+                            <br>
+                            <p data-tooltip=" Текст подсказки "><span class="span">Наведи на меня</span> </p>
+                            <br>
                         </li>
                     </div>
 
@@ -509,7 +517,7 @@
                         <img src="img/caniuse.png" alt="">
                         <h2 id="title44">4.4 Свойства для контейнера</h2>
                         <dl id="prop_1">
-                            <dt>display</dt>
+                            <dt><span>display</span></dt>
                             <dd>Опеределяет элемент как контейнер и устанавливает новый контекст форматирования
                                 сетки для его
                                 содержимого.
@@ -526,7 +534,7 @@
                         <li><a href="#Content">&lt;&lt;&lt;Содержание</a></li>
 
                         <dl id="prop_2">
-                            <dt>grid-template-columns<br>grid-template-rows</dt>
+                            <dt><span>grid-template-columns<br>grid-template-rows</span></dt>
                             <dd>Опеределяет колонки и строки сетки с помощью списка значений разделённого
                                 пробелами.
                                 Значения
@@ -608,7 +616,7 @@
                         <li><a href="#Content">&lt;&lt;&lt;Содержание</a></li>
 
                         <dl id="prop_3">
-                            <dt>grid-template-areas</dt>
+                            <dt><span>grid-template-areas</span></dt>
                             <dd>Опеределяет шаблон сетки ссылаяся на имена областей, которые заданы с помощью
                                 свойства <a href="#prop_11">grid-area</a>. Повторение названия области приводит
                                 к
@@ -642,7 +650,7 @@ grid-template-areas:
                         <li><a href="#Content">&lt;&lt;&lt;Содержание</a></li>
 
                         <dl id="prop_4">
-                            <dt>grid-template</dt>
+                            <dt><span>grid-template</span></dt>
                             <dd>Сокращение для <a href="#prop_2">grid-template-rows</a>, <a
                                     href="#prop_2">grid-template-columns</a>
                                 и
@@ -679,7 +687,7 @@ grid-template-areas:
                         <li><a href="#Content">&lt;&lt;&lt;Содержание</a></li>
 
                         <dl id="prop_5">
-                            <dt>column-gap<br>row-gap<br>gap</dt>
+                            <dt><span>column-gap<br>row-gap<br>gap</span></dt>
                             <dd>Опеределяет размер ширины линии между строками, между столбцами или для двух
                                 параметров одновременно.
                                 <br><br><b>Значения:</b>
@@ -700,7 +708,7 @@ grid-template-areas:
                         <li><a href="#Content">&lt;&lt;&lt;Содержание</a></li>
 
                         <dl id="prop_6">
-                            <dt>grid-auto-columns<br>grid-auto-rows</dt>
+                            <dt><span>grid-auto-columns<br>grid-auto-rows</span></dt>
                             <dd>Определяет размер строк или столбцов по умолчанию. Работает если не указаны
                                 свойства
                                 <a href="#prop_2">grid-template-rows</a> и <a href="#prop_2">grid-template-columns</a>
@@ -723,7 +731,7 @@ grid-template-areas:
                         <li><a href="#Content">&lt;&lt;&lt;Содержание</a></li>
 
                         <dl id="prop_7">
-                            <dt>grid-auto-flow</dt>
+                            <dt><span>grid-auto-flow</span></dt>
                             <dd>Если у вас есть элементы, которые вы явно не позиционируете в сетке, запускается
                                 алгоритм авто
                                 размещения, чтобы их автоматически разместить. Это свойство контролирует то как
@@ -752,7 +760,7 @@ grid-template-areas:
                         <li><a href="#Content">&lt;&lt;&lt;Содержание</a></li>
 
                         <dl id="prop_8">
-                            <dt>grid</dt>
+                            <dt><span>grid</span></dt>
                             <dd>Сокращение для настройки всех следующих свойств: <a
                                     href="#prop_2">grid-template-rows</a>, <a href="#prop_2">grid-template-columns</a>,
                                 <a href="#prop_3">grid-template-area</a>, <a href="#prop_6">grid-auto-rows</a>,
@@ -794,7 +802,7 @@ grid-template-areas:
                         <li><a href="#Content">&lt;&lt;&lt;Содержание</a></li>
 
                         <dl id="prop_9">
-                            <dt>justify-items (1)<br>align-items (2)<br>place-items</dt>
+                            <dt><span>justify-items (1)<br>align-items (2)<br>place-items</span></dt>
                             <dd>
                                 Выравнивает элементы внутри ячеек.<br>
                                 (1) Выравнивает элементы вдоль оси строки (по горизонтали).<br>
@@ -821,7 +829,7 @@ grid-template-areas:
                         <li><a href="#Content">&lt;&lt;&lt;Содержание</a></li>
 
                         <dl id="prop_10">
-                            <dt>justify-content (1)<br>align-content (2)<br>place-content</dt>
+                            <dt><span>justify-content (1)<br>align-content (2)<br>place-content</span></dt>
                             <dd>
                                 Выравнивает сетку внутри контейнера.<br>
                                 (1) Выравнивает элементы по горизонтали.<br>
@@ -859,7 +867,7 @@ grid-template-areas:
 
                         <h2 id="title45">4.5 Свойства для дочерних элементов</h2>
                         <dl id="prop_11">
-                            <dt>grid-area</dt>
+                            <dt><span>grid-area</span></dt>
                             <dd>
                                 Даёт название элементу чтобы можно было ссылаться на него с помощью шаблона
                                 созданного через свойство
@@ -889,7 +897,7 @@ grid-template-areas:
                         <li><a href="#Content">&lt;&lt;&lt;Содержание</a></li>
 
                         <dl id="prop_12">
-                            <dt>grid-column-start<br>grid-column-end<br>grid-row-start<br>grid-row-end</dt>
+                            <dt><span>grid-column-start<br>grid-column-end<br>grid-row-start<br>grid-row-end</span></dt>
                             <dd>
                                 Определяют местоположение в сетке ссылаясь на конкретные линии.
                                 grid-column-start /
@@ -927,7 +935,7 @@ grid-template-areas:
                         <li><a href="#Content">&lt;&lt;&lt;Содержание</a></li>
 
                         <dl id="prop_13">
-                            <dt>grid-column<br>grid-row</dt>
+                            <dt><span>grid-column<br>grid-row</span></dt>
                             <dd>
                                 Сокращения для <a href="#prop_12">grid-column-start</a> + <a
                                     href="#prop_12">grid-column-end</a> и <a href="#prop_12">grid-row-start</a>
@@ -951,7 +959,7 @@ grid-template-areas:
                         <li><a href="#Content">&lt;&lt;&lt;Содержание</a></li>
 
                         <dl id="prop_14">
-                            <dt>justify-self<br>align-self<br>place-self</dt>
+                            <dt><span>justify-self<br>align-self<br>place-self</span></dt>
                             <dd>
                                 justify-self - Выравнивает содержимое элемента вдоль оси строки. align-self -
                                 Выравнивает содержимое
