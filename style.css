@@ -154,31 +154,3 @@ p {
     overflow: auto;
   }
 }
-.menu {
-  background-color: #192138;
-  font-weight: bold;
-  position: relative;
-  top: 0;
-  bottom: 0;
-  width: 270px;
-  overflow-y: auto;
-}
-
-div {
-  display: block;
-  unicode-bidi: isolate;
-}
-
-element.style {
-}
-ol {
-  color: #bbdefb;
-}
-таблица стилей агента пользователя ol {
-  display: block;
-  list-style-type: decimal;
-  margin-block-start: 1em;
-  margin-block-end: 1em;
-  padding-inline-start: 40px;
-  unicode-bidi: isolate;
-}
