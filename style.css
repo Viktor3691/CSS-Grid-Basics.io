@@ -154,3 +154,36 @@ p {
     overflow: auto;
   }
 }
+.grid {
+  margin: 20px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(2, 150px);
+  gap: 10px;
+}
+.grand-container {
+  display: grid;
+  margin: 10px;
+  gap: 10px;
+}
+/* Определяем родительский контейнер как CSS Grid */
+.parent {
+  display: grid; /* Включаем CSS Grid для этого контейнера */
+  /* Создаём две колонки: первая занимает 25% ширины, вторая — 75% */
+  grid-template-columns: 25% 75%;
+  /* Добавляем промежуток в 10px между колонками и строками */
+  gap: 10px;
+  /* Добавляем рамку вокруг всего грид-контейнера для наглядности */
+  border: 1px solid black;
+}
+/* Стили для дочерних элементов внутри грид-контейнера */
+.child {
+  /* Цвет фона для наглядности */
+  background: lightblue;
+  /* Центрируем текст по горизонтали */
+  text-align: center;
+  /* Добавляем внутренний отступ, чтобы контент не прилипал к краям */
+  padding: 10px;
+  /* Добавляем рамку вокруг каждого элемента сетки */
+  border: 1px solid black;
+}
