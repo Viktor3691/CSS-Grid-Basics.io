@@ -15,7 +15,7 @@
 }
 
 .logo {
-  background: left / cover url("IMG/heder_fon.png");
+  background: left / cover url("IMG/heder_fon.png"!important);
   display: flex;
   width: 100%;
   height: 50px;
