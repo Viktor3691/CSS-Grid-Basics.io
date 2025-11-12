@@ -176,8 +176,69 @@ p {
   /* Добавляем рамку вокруг всего грид-контейнера для наглядности */
   border: 1px solid black;
 }
+.parent1 {
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+  border: 1px solid black;
+  background: lightblue;
+}
+.parent2 {
+  display: grid;
+
+  /* Первая строка занимает 1 часть пространства, вторая — 2 части */
+  grid-template-rows: 1fr 2fr;
+  gap: 10px;
+  border: 1px solid black;
+}
+.parent3 {
+  display: grid;
+
+  /* Создаём три колонки одинаковой ширины */
+  grid-template-columns: 1fr 1fr 1fr;
+  /* Задаём две строки фиксированной высоты по 100px */
+  grid-template-rows: 100px 100px;
+  gap: 10px;
+  border: 1px solid black;
+}
+.parent4 {
+  display: grid;
+  grid-template-rows: 100px;
+  grid-template-columns: 1fr 1fr;
+  grid-auto-rows: 50px;
+  /* Добавляем промежуток в 10px между колонками и строками */
+  gap: 10px;
+}
+.parent5 {
+  display: grid;
+
+  /* Задаём первую колонку фиксированной ширины 100px */
+  grid-template-columns: 100px;
+
+  gap: 10px;
+  /* Добавляем промежуток в 10px между колонками и строками */
+  border: 1px solid black;
+
+  /* grid-template-columns: 1fr 1fr; */
+
+  /* Задаём две строки фиксированной высоты по 70px каждая */
+  grid-template-rows: 70px 70px;
+
+  /* Если элементов больше, чем одна колонка, создаются дополнительные колонки шириной 30px */
+  grid-auto-columns: 30px;
+}
+
 /* Стили для дочерних элементов внутри грид-контейнера */
 .child {
+  /* Цвет фона для наглядности */
+  background: lightblue;
+  /* Центрируем текст по горизонтали */
+  text-align: center;
+  /* Добавляем внутренний отступ, чтобы контент не прилипал к краям */
+  padding: 10px;
+  /* Добавляем рамку вокруг каждого элемента сетки */
+  border: 1px solid black;
+}
+.child1 {
   /* Цвет фона для наглядности */
   background: lightblue;
   /* Центрируем текст по горизонтали */
