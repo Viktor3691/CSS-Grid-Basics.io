@@ -154,97 +154,149 @@ p {
     overflow: auto;
   }
 }
-.grid {
-  margin: 20px;
+#parent {
+  display: grid;
+  grid-template-columns: 25% 75%;
+  border: 2px solid #696989;
+  padding: 10px;
+  width: 100%;
+}
+/* Стили для дочерних элементов внутри грид-контейнера */
+
+#parent > div {
+  /* padding: 10px; */
+  border: 1px solid #696989;
+}
+
+#parent1 {
+  display: grid;
+  grid-template-columns: 10% 20% 30% 40%;
+  border: 2px solid #696989;
+  padding: 10px;
+  width: 100%;
+}
+#parent1 > div {
+  padding: 10px;
+  border: 1px solid #696989;
+}
+
+#parent2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr 3fr;
+  border: 2px solid #696989;
+  padding: 10px;
+  width: 100%;
+}
+#parent2 > div {
+  padding: 10px;
+  box-sizing: border-box;
+  border: 1px solid #696989;
+}
+#parent3 {
+  display: grid;
+  grid-template-columns: 1fr 0.5fr 2.5fr;
+  border: 2px solid #696989;
+  padding: 10px;
+  width: 100%;
+}
+#parent3 > div {
+  padding: 10px;
+  border: 1px solid #696989;
+}
+#parent4 {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: repeat(2, 150px);
-  gap: 10px;
 }
-.grand-container {
-  display: grid;
-  margin: 10px;
-  gap: 10px;
-}
-/* Определяем родительский контейнер как CSS Grid */
-.parent {
-  display: grid; /* Включаем CSS Grid для этого контейнера */
-  /* Создаём две колонки: первая занимает 25% ширины, вторая — 75% */
-  grid-template-columns: 25% 75%;
-  /* Добавляем промежуток в 10px между колонками и строками */
-  gap: 10px;
-  /* Добавляем рамку вокруг всего грид-контейнера для наглядности */
-  border: 1px solid black;
-}
-.parent1 {
-  display: grid;
-  grid-template-columns: 1fr 3fr;
-  border: 1px solid black;
-  background: lightblue;
-}
-.parent2 {
-  display: grid;
-
-  /* Первая строка занимает 1 часть пространства, вторая — 2 части */
-  grid-template-rows: 1fr 2fr;
-  gap: 10px;
-  border: 1px solid black;
-}
-.parent3 {
-  display: grid;
-
-  /* Создаём три колонки одинаковой ширины */
-  grid-template-columns: 1fr 1fr 1fr;
-  /* Задаём две строки фиксированной высоты по 100px */
-  grid-template-rows: 100px 100px;
-  gap: 10px;
-  border: 1px solid black;
-}
-.parent4 {
-  display: grid;
-  grid-template-rows: 100px;
-  grid-template-columns: 1fr 1fr;
-  grid-auto-rows: 50px;
-  /* Добавляем промежуток в 10px между колонками и строками */
-  gap: 10px;
-}
-.parent5 {
-  display: grid;
-
-  /* Задаём первую колонку фиксированной ширины 100px */
-  grid-template-columns: 100px;
-
-  gap: 10px;
-  /* Добавляем промежуток в 10px между колонками и строками */
-  border: 1px solid black;
-
-  /* grid-template-columns: 1fr 1fr; */
-
-  /* Задаём две строки фиксированной высоты по 70px каждая */
-  grid-template-rows: 70px 70px;
-
-  /* Если элементов больше, чем одна колонка, создаются дополнительные колонки шириной 30px */
-  grid-auto-columns: 30px;
-}
-
-/* Стили для дочерних элементов внутри грид-контейнера */
-.child {
-  /* Цвет фона для наглядности */
-  background: lightblue;
-  /* Центрируем текст по горизонтали */
-  text-align: center;
-  /* Добавляем внутренний отступ, чтобы контент не прилипал к краям */
+#parent4 > div {
   padding: 10px;
-  /* Добавляем рамку вокруг каждого элемента сетки */
-  border: 1px solid black;
+  border: 1px solid #696989;
 }
-.child1 {
-  /* Цвет фона для наглядности */
-  background: lightblue;
-  /* Центрируем текст по горизонтали */
-  text-align: center;
-  /* Добавляем внутренний отступ, чтобы контент не прилипал к краям */
+#parent5 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr) 2fr;
+}
+
+#parent5 > div {
   padding: 10px;
-  /* Добавляем рамку вокруг каждого элемента сетки */
-  border: 1px solid black;
+  border: 1px solid #696989;
+}
+#parent6 {
+  display: grid;
+  grid-template-columns: 100px auto 150px;
+  border: 2px solid #696989;
+  padding: 10px;
+  width: 100%;
+}
+
+#parent6 > div {
+  padding: 10px;
+  border: 1px solid #696989;
+}
+#parent7 {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, 200px);
+  border: 2px solid #696989;
+  padding: 10px;
+}
+#parent7 > div {
+  padding: 10px;
+  border: 1px solid #696989;
+}
+#parent8 {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  border: 2px solid #696989;
+  padding: 10px;
+}
+
+#parent8 > div {
+  padding: 10px;
+  border: 1px solid #696989;
+}
+#parent9 {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  border: 2px solid #696989;
+  padding: 10px;
+  width: 600px;
+}
+
+#parent9 > div {
+  padding: 10px;
+  border: 1px solid #696989;
+}
+#parent10 {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  border: 2px solid #696989;
+  padding: 10px;
+  width: 400px;
+}
+#parent10 > div {
+  padding: 10px;
+  border: 1px solid #696989;
+}
+#parent11 {
+  display: grid;
+  grid-template-rows: repeat(4, 50px);
+  border: 2px solid #696989;
+  padding: 10px;
+}
+
+#parent11 > div {
+  padding: 10px;
+  border: 1px solid #696989;
+}
+#parent12 {
+  display: grid;
+  grid-template-rows: 100px auto 60px;
+  border: 2px solid #696989;
+  padding: 10px;
+  width: 600px;
+  height: 400px;
+}
+
+#parent12 > div {
+  padding: 10px;
+  border: 1px solid #696989;
 }
