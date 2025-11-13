@@ -1455,19 +1455,172 @@
                                 </dd>
 
                             </dl>
-
-
-
-
-
-
-
-
-
                             <!--  -->
                             <!--  -->
+                            <dl>
+                                <dt>
+                                    <h3>Сокращение для рядов и столбцов в CSS гридах</h3>
+                                </dt>
+                                <dd>
+                                    Бывают ситуации, когда удобно указать размеры рядов и столбцов в краткой форме. Для
+                                    этого мы используем свойство
+                                    grid-template, которое указывается в элементе-родителе и представляет собой
+                                    сокращенную форму записи двух свойств
+                                    grid-template-rows и grid-template-columns. <br>
+                                    <br>
+                                    Ряды и столбцы для грид-контейнера указываются через слеш, их размеры определяются в
+                                    единицах измерения.
+                                </dd>
+                            </dl>
+                            <!--  -->
+                            <dl>
+                                <dt>
+                                    <h4>Пример 1</h4>
+                                </dt>
+                                <dd>
+                                    <p>Давайте создадим грид с тремя рядами и тремя столбцами:</p>
+                                </dd>
+                                <dd>
+                                    <div class="ramka"> HTML
+                                        <br>
+                                        <br>
+                                        &lt;div id="parent13"&gt;<br>
+                                        &emsp;&lt;div&gt;1&lt;/div&gt;<br>
+                                        &emsp;&lt;div&gt;2&lt;/div&gt;<br>
+                                        &emsp;&lt;div&gt;3&lt;/div&gt;<br>
+                                        &emsp;&lt;div&gt;4&lt;/div&gt;<br>
+                                        &emsp;&lt;div&gt;5&lt;/div&gt;<br>
+                                        &emsp;&lt;div&gt;6&lt;/div&gt;<br>
+                                        &emsp;&lt;div&gt;7&lt;/div&gt;<br>
+                                        &emsp;&lt;div&gt;8&lt;/div&gt;<br>
+                                        &emsp;&lt;div&gt;9&lt;/div&gt;<br>
+                                        &lt;/div&gt;
+                                        <br>
+                                    </div>
+                                </dd>
+                                <br>
+                                <!--  -->
+                                <dd>
+                                    <div class="ramka"> CSS
+                                        <br>
+                                        <br>
+                                        #parent13 {<br>
+                                        display: grid;<br>
+                                        grid-template:1fr 1fr 1fr / 1fr 1fr 1fr<br>
+                                        border: 2px solid #696989;<br>
+                                        padding: 10px;<br>
+                                        width: 600px;<br>
+                                        height: 400px;<br>
+                                        }
+                                        <br>
+                                        <br>
+                                        #parent13 &gt; div {<br>
+                                        padding: 10px;<br>
+                                        border: 1px solid #696989;<br>
+                                        }
+                                        <br>
+                                    </div>
+
+                                </dd>
+                                <dd>
+                                    <div id="parent13">
+                                        <div>1</div>
+                                        <div>2</div>
+                                        <div>3</div>
+                                        <div>4</div>
+                                        <div>5</div>
+                                        <div>6</div>
+                                        <div>7</div>
+                                        <div>8</div>
+                                        <div>9</div>
+                                    </div>
+                                </dd>
+
+                            </dl>
+                            <!--  -->
+                            <dl>
+                                <dt>
+                                    <h4>Пример 2</h4>
+                                </dt>
+                                <dd>
+                                    <p>А теперь давайте зададим второму и третьему рядам одинаковую ширину, а каждому
+                                        столбцу - различную ширину:</p>
+                                </dd>
+                                <dd>
+                                    <div class="ramka"> CSS
+                                        <br>
+                                        <br>
+                                        #parent14 {<br>
+                                        display: grid;<br>
+                                        grid-template: 1fr 60px 60px / 20% 1fr 15%;<br>
+                                        border: 2px solid #696989;<br>
+                                        padding: 10px;<br>
+                                        width: 600px;<br>
+                                        height: 300px;<br>
+                                        }<br>
+                                        <br>
+                                        #parent14 &gt; div {<br>
+                                        padding: 10px;<br>
+                                        border: 1px solid #696989;<br>
+                                        }
+                                        <br>
+                                    </div>
+                                </dd>
+                                <!--  -->
+                                <dd>
+                                    <div id="parent14">
+                                        <div>1</div>
+                                        <div>2</div>
+                                        <div>3</div>
+                                        <div>4</div>
+                                        <div>5</div>
+                                        <div>6</div>
+                                        <div>7</div>
+                                        <div>8</div>
+                                        <div>9</div>
+                                    </div>
+                                </dd>
+                            </dl>
                             <!--  -->
                             <!--  -->
+                            <dl>
+                                <dt>
+                                    <h3>Объединение рядов в CSS гридах</h3>
+                                </dt>
+                                <dd>
+                                    <p>Ряды и колонки в гридах формируют сетку. Можно сделать так, чтобы элемент занимал
+                                        не одну ячейку сетки, а несколько. <br>
+                                        <br>
+                                        Для того, чтобы элемент занял более одного ряда, ему следует задать свойство
+                                        grid-row. В этом свойстве через слеш
+                                        задаются числа, указывающее начальную и конечную позицию элементов в гриде. <br>
+                                        <br>
+                                        При этом элемент растянется от первой позиции до второй позиции (не включая ее).
+                                        To есть значение 1 / 2 заставит элемент
+                                        занять одну первую ячейку, а значение 1 / 3 заставит элемент занять первую и
+                                        вторую ячейку (но не включая третью).
+                                    </p>
+                                </dd>
+                                <dt>
+                                    <h4>Пример</h4>
+                                </dt>
+                                <dd>
+                                    <p>Пусть у нас есть грид с тремя дочерними элементами. Давайте разместим их так,
+                                        чтобы первый элемент занимал два ряда:</p>
+                                    <div class="ramka"> HTML
+                                        <br>
+                                        <br>
+                                        &lt;div id="parent15"&gt;<br>
+                                        &emsp;&lt;div&gt;1&lt;/div&gt;<br>
+                                        &emsp;&lt;div&gt;2&lt;/div&gt;<br>
+                                        &emsp;&lt;div&gt;3&lt;/div&gt;<br>
+
+                                        &lt;/div&gt;
+                                        <br>
+                                    </div>
+                                </dd>
+                            </dl>
+
                             <!--  -->
 
 
