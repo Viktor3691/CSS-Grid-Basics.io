@@ -1,0 +1,2421 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+
+<head>
+    <meta name="keywords" content="HTML, CSS, JavaScript">
+    <meta name="description"
+        content="Основы CSS Grid.  Атрибут title для вывода подсказок.  Как сделать аналог атрибута title для вывода подсказок. Как сделать плавную прокрутку страницы по якорям без JS, свойство scroll-behavior на CSS. Все свойства CSS Grid.">
+    <meta name="author" content="VViller">
+    <meta name="copyright" content="Copyright © 2025">
+    <meta name="date" content="November, 07, 2025 10:53 Am">
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+    <meta name="revisit-after" content="28 day">
+    <meta name="rating" content="general">
+    <meta name="language" content="ru">
+    <meta name="charset" content="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="github-markdown.css">
+    <style>
+        .markdown-body {
+            box-sizing: border-box;
+            min-width: 200px;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 45px;
+        }
+
+        @media (max-width: 767px) {
+            .markdown-body {
+                padding: 15px;
+            }
+        }
+    </style>
+
+    <title>Основы CSS Grid — Шаг 1 — Stepik</title>
+    <link rel="stylesheet" href="style copy.css">
+</head>
+
+<body>
+
+
+    <div class="container">
+        <!---->
+
+        <div class="grid">
+            <!--  -->
+            <header class="header">
+                <nav id="main-navbar" class="navbar" aria-label="Общая навигация по сайту">
+                    <picture>
+                        <a class="logo" href="#">Мой блог о программировании</a>
+                    </picture>
+                </nav>
+                <p style="color: rgb(250, 253, 255);">Автор: VViller<br>
+                    <a href="https://github.com/Viktor3691" target="_blank" style="color: rgb(251, 252, 253);">Обо
+                        мне</a><br>
+                    <a href="#bottom" id="top" style="color: rgb(251, 252, 253);">Вниз</a>
+                </p>
+            </header>
+            <!--  -->
+            <!--  -->
+            <aside class="sidebar">
+                <h2 id="Content">Содержание</h2>
+                <ol>
+                    <li><a href="#title1">Всплывающая подсказка</a></li>
+                    <li><a href="#title2">Как сделать аналог атрибута title</a></li>
+                    <li><a href="#title3">Как сделать плавную прокрутку страницы по якорям без JS.</a></li>
+                    <li><a href="#title4">Все свойства CSS Grid</a>
+
+                        <ol>
+                            <li><a href="#title41">Введение</a></li>
+                            <li><a href="#title42">Сравнение с Flexbox</a></li>
+                            <li><a href="#title43">Поддержка браузерами</a></li>
+                        </ol>
+                    </li>
+
+                    <li><a href="#title5">Свойства грид-контейнера</a>
+                        <ol>
+                            <li><a href="#title51">Отображение гридов в отладчике браузера</a></li>
+                            <li><a href="#title52">Количество и ширина столбцов в CSS гридах</a></li>
+                            <li><a href="#title53">Единица fr в CSS гридах</a></li>
+                            <li><a href="#title54">Дробные единицы fr в CSS гридах</a></li>
+                            <li><a href="#title55">Функция repeat в CSS гридах</a></li>
+                            <li><a href="#title56">Значение auto в CSS гридах</a></li>
+                            <li><a href="#title57">Значение auto-fill в CSS гридах</a></li>
+                            <li><a href="#title58">Функция minmax в CSS гридах</a></li>
+                            <li><a href="#title59">Значение auto-fit в CSS гридах</a></li>
+                            <li><a href="#title510">Количество и ширина рядов в CSS гридах</a></li>
+                            <li><a href="#title511">Сокращение для рядов и столбцов в CSS гридах</a></li>
+                            <li><a href="#title512">Объединение рядов в CSS гридах</a></li>
+                            <li><a href="#title513">Объединение столбцов в CSS гридах</a></li>
+                            <li><a href="#title514">Комбинации объединений по рядам и столбцам в CSS гридах</a>
+                            </li>
+                            <li><a href="#title515">Перекрытие столбцов в CSS гридах</a></li>
+                            <li><a href="#title516">Расстояние между столбцами в CSS гридах</a></li>
+                            <li><a href="#title517">Расстояние между рядами в CSS гридах</a></li>
+                            <li><a href="#title518">Расстояние между столбцами и рядами в CSS гридах</a></li>
+                        </ol>
+                    </li>
+                </ol>
+            </aside>
+            <!--  -->
+            <!--  -->
+            <main class="content">
+                <section>
+                    <div class="container_text">
+                        <h1>5.2 Основы CSS Grid - курс Stepik</h1>
+
+                        <h3 id="title1">1. Всплывающая подсказка</h3>
+
+                        <p>Делаем стилизованную всплывающую подсказку. <a
+                                href="https://html-css.blog/css/vsplyvayushhaya-podskazka-na-html-i-css//"
+                                target="_blank" rel="noopener noreferrer"><i> сайт Заметки верстальщика</i></a></p>
+                        <p>Самый простой способ для создания всплывающей подсказки, это добавить элементу атрибут
+                            title,
+                            но вид такой подсказки зависит от браузера, появляется с небольшой задержкой и не может
+                            быть
+                            стилизован.</p>
+
+                        <div class="ramka"> HTML
+                            <br>
+                            <br>
+                            &lt;p title="Нативная подсказка"&gt;Наведи на меня&lt;/p&gt;
+                            <br>
+                        </div>
+                        <div class="ramka">
+                            <p title="Нативная подсказка">Наведи на меня</p>
+                        </div>
+                        <p>Для создания кастомной всплывающей подсказки, напишем элементу в html <a
+                                href="https://html-css.blog/html/polzovatelskij-data-atribut/" target="_blank"
+                                rel="noopener noreferrer">пользовательский data атрибут</a> data-tooltip с текстом,
+                            который
+                            мы хотим выводить, а в css добавим псевдоэлемент <span class="span"> ::after,
+                            </span>которому
+                            передадим значение из добавленного атрибута.</p>
+
+                        <div class="ramka">
+                            &lt;p data-tooltip="Текст подсказки"&gt;Наведи на меня&lt;/p&gt;
+                        </div>
+
+                        <div class="ramka">
+                            &lt;style&gt;
+                            [data-tooltip]::after {
+                            content: attr(data-tooltip);
+                            }
+                            &lt;/style&gt;
+                        </div>
+
+                        <p>Получаем такой результат: текст из атрибута вывелся на страницу.</p>
+
+                        <div class="ramka">
+                            <p class="example1" data-tooltip1=" Текст подсказки "> Наведи на меня</p>
+                        </div>
+
+                        <style>
+                            [data-tooltip1]::after {
+                                content: attr(data-tooltip1);
+                            }
+                        </style>
+
+                        <p>Теперь скроем подсказку, сделаем чтобы она появлялась при наведении, немного стилизуем её
+                            и
+                            готово:</p>
+
+                        <div class="ramka"> HTML
+                            <br>
+                            <br>
+                            &lt;style&gt; <br>
+                            [data-tooltip] {<br>
+                            position: relative;<br>
+                            cursor: pointer;<br>
+                            width: max-content;<br>
+                            }<br>
+                            <br>
+                            [data-tooltip]:hover::after,<br>
+                            [data-tooltip]:hover::before { <br>
+                            opacity: 1; <br>
+                            visibility: visible; <br>
+                            } <br>
+                            <br>
+                            [data-tooltip]::after, <br>
+                            [data-tooltip]::before { <br>
+                            position: absolute; <br>
+                            left: 50%; <br>
+                            display: block; <br>
+                            opacity: 0; <br>
+                            visibility: hidden; <br>
+                            transition: .3s; <br>
+                            transform: translateX(-50%); <br>
+                            } <br>
+                            <br>
+                            [data-tooltip]::after { <br>
+                            bottom: -54px; <br>
+                            content: attr(data-tooltip); <br>
+                            padding: 8px; <br>
+                            border-radius: 8px; <br>
+                            background: orange; <br>
+                            text-align: center; <br>
+                            width: max-content; <br>
+                            } <br>
+                            <br>
+                            [data-tooltip]::before { <br>
+                            bottom: -10px; <br>
+                            content: ''; <br>
+                            border: 10px solid transparent; <br>
+                            border-bottom: 10px solid orange; <br>
+                            }
+                            &lt;/style&gt;
+                            <br>
+                        </div>
+
+                        <style>
+                            [data-tooltip] {
+                                position: relative;
+                                cursor: pointer;
+                                width: max-content;
+                            }
+
+                            [data-tooltip]:hover::after,
+                            [data-tooltip]:hover::before {
+                                opacity: 1;
+                                visibility: visible;
+                            }
+
+                            [data-tooltip]::after,
+                            [data-tooltip]::before {
+                                position: absolute;
+                                left: 50%;
+                                display: block;
+                                opacity: 0;
+                                visibility: hidden;
+                                transition: .3s;
+                                transform: translateX(-50%);
+                            }
+
+                            [data-tooltip]::after {
+                                bottom: -54px;
+                                content: attr(data-tooltip);
+                                padding: 8px;
+                                border-radius: 8px;
+                                background: orange;
+                                text-align: center;
+                                width: max-content;
+                            }
+
+                            [data-tooltip]::before {
+                                bottom: -10px;
+                                content: '';
+                                border: 10px solid transparent;
+                                border-bottom: 10px solid orange;
+                            }
+                        </style>
+
+                        <div class="ramka">
+                            <li>
+                                <br>
+                                <p data-tooltip=" Текст подсказки "><span class="span">Наведи на меня</span> </p>
+                                <br>
+                            </li>
+                        </div>
+
+                    </div>
+
+                    <li><a href="#Content">&lt;&lt;&lt;Содержание</a></li>
+                    <!---->
+                    <!--  -->
+                    <div class="container_text">
+
+                        <h3 id="title2">2. Как сделать аналог атрибута title для вывода подсказок при наведении на
+                            любой
+                            элемент на странице.
+                        </h3>
+                        <p>Кастомное оформление подсказок title мы будем делать с помощью псевдоэлементов.</p>
+
+                        <div class="ramka"> HTML
+                            <br>
+                            <br>
+                            &lt;ul&gt;<br>
+                            &lt;li <span class="span">mytitle</span>="Первая подсказка - mytitle"&gt;Текст
+                            1&lt;/li&gt;<br>
+                            &lt;br&gt;<br>
+                            &lt;li <span class="span">mytitle</span>="вторая подсказка - mytitle"&gt;Текст
+                            2&lt;/li&gt;<br>
+                            &lt;br&gt;<br>
+                            &lt;li <span class="span">mytitle</span>="Третья подсказка - mytitle"&gt;Текст
+                            3&lt;/li&gt;<br>
+                            &lt;br&gt;<br>
+                            &lt;/ul&gt;<br>
+                            <br>
+                        </div>
+
+                        <div class="ramka"> HTML
+                            <br>
+                            <br>
+                            &lt;style&gt; <br>
+                            [<span class="span">mytitle</span>] {<br>
+                            cursor: pointer;<br>
+                            }<br>
+                            [<span class="span">mytitle</span>]:after {<br>
+                            content: " ";<br>
+                            transition: 0.1s;<br>
+                            }<br>
+                            [<span class="span">mytitle</span>]:hover:after {<br>
+                            width: 550px;<br>
+                            content: attr(mytitle);<br>
+                            background-color: #e9a333;<br>
+                            padding: 2px;<br>
+                            z-index: 100;<br>
+                            }
+                            &lt;/style&gt;
+                            <br>
+                        </div>
+
+                        <ul>
+                            <li mytitle="Первая  подсказка - mytitle">Текст 1</li>
+                            <br>
+                            <li mytitle="вторая подсказка - mytitle">Текст 2</li>
+                            <br>
+                            <li mytitle="Третья подсказка - mytitle">Текст 3</li>
+                            <br>
+                        </ul>
+
+                    </div>
+
+                    <li><a href="#Content">&lt;&lt;&lt;Содержание</a></li>
+                    <!---->
+                    <!---->
+
+                    <div class="container_text">
+                        <h3 id="title3">3. Как сделать плавную прокрутку страницы по якорям без JS. Мы будем
+                            использовать
+                            свойство
+                            scroll-behavior на CSS.</h3>
+                        <p> Плавную прокрутку страницы по якорям можно реализовать с помощью CSS, но JavaScript не
+                            обязателен. Однако есть и подход
+                            с использованием JavaScript, который позволяет перехватывать стандартное поведение
+                            браузера
+                            и заменять его плавной
+                            анимацией прокрутки.</p>
+
+                        <h4>С помощью CSS</h4>
+
+                        <p>Свойство <strong>scroll-behavior</strong> в CSS управляет поведением прокрутки внутри
+                            блока.
+                            Значение <span>smooth</span> делает прокрутку плавной.
+                            Нужно указать это свойство для селектора html — для селектора body свойство не
+                            сработает.
+                        </p>
+
+                        <h4>Особенности:</h4>
+                        <ul>
+                            <li>Значение scroll-behavior не наследуется — его нужно указывать для каждого блока с
+                                собственной полосой прокрутки</li>
+                            <li>Если нужно указать scroll-behavior для всей страницы, его нужно указать для
+                                селектора
+                                html, для селектора body свойство
+                                не сработает.</li>
+                        </ul>
+
+                        <p><strong>Типичный сценарий использования</strong> — навигационное меню с якорными
+                            ссылками:
+                            при клике на ссылку браузер плавно прокрутит
+                            страницу к соответствующему разделу вместо мгновенного перемещения.</p>
+
+                        <div class="ramka"> HTML
+                            <br>
+                            <br>
+                            &lt;a href="#bottom" id="top"&gt;Вниз&lt;/a&gt;
+                            <br>
+                        </div>
+
+                        <div class="ramka"> CSS <br>
+                            <br>
+                            @media (prefers-reduced-motion: no-preference) { <br>
+                            :root { <br>
+                            scroll-behavior: smooth; <br>
+                            } <br>
+                            }
+                            <br>
+                        </div>
+
+                        <div class="ramka"> HTML
+                            <br>
+                            <br>
+                            &lt;a href="#top" id="bottom"&gt;Вверх&lt;/a&gt;
+                            <br>
+                        </div>
+
+                    </div>
+
+                    <li><a href="#Content">&lt;&lt;&lt;Содержание</a></li>
+                    <!--  -->
+                    <!--  -->
+
+
+                    <div class="container_text">
+                        <h2 id="title4">4. Все свойства CSS Grid.</h2>
+                        <p>Мы рассмотрим основы и посмотрим как делается адаптивная верстка страницы. Это введение в
+                            Grid технологии, которое
+                            позволит понять что такое сетка и начать верстать без помощи таких фреймворков как
+                            Bootstrap, а на чистом CSS. </p>
+                        <p><a href="https://morphismail.github.io/css-grid-manual/" target="_blank"
+                                rel="noopener noreferrer">Справочник
+                                по CSS
+                                Grid</a></p>
+
+                        <li><a href="#Content">&lt;&lt;&lt;Содержание</a></li>
+                        <!---->
+                        <!--  -->
+                        <div class="content">
+                            <h2 id="title41">4.1 Введение</h2>
+                            <p>CSS Grid Layout - самая мощная система компоновки из доступных на данный момент в
+                                CSS.
+                                Это двумерная
+                                система, которая может обрабатывать как столбцы так и строки, в отличии от Flexbox,
+                                который в значительной
+                                степени является одномерной системой. При работе с CSS Grid, вы применяете CSS
+                                правила к
+                                родительским
+                                элементам (которые становятся Grid контейнерами) и к дочерним элементам (которые
+                                становятся Grid
+                                элементами).</p>
+
+                            <h3>Основные понятия и терминология</h3>
+
+                            <dl>
+                                <dt><strong>Грид-контейнер</strong></dt>
+                                <dd>
+                                    <p>Для начала нужно превратить элемент в грид-контейнер с помощью свойства
+                                        <span>display:
+                                            grid</span> или
+                                        <span>inline-grid</span>. Грид-контейнер —
+                                        это родительский контейнер, который создаёт сетку и делает дочерние элементы
+                                        её
+                                        ячейками. <br>
+                                        <br>
+                                        По умолчанию, когда мы прописываем свойство grid, создаётся сетка с одной
+                                        колонкой, а
+                                        строки добавляются автоматически в
+                                        зависимости от количества элементов внутри контейнера. Это называется
+                                        неявной
+                                        сеткой,
+                                        потому что мы заранее не задаём
+                                        структуру:
+                                    </p>
+                                </dd>
+                                <dd>
+                                    <img src="IMG/1.png" alt="1">
+                                    <div class="ramka"> CSS <br>
+                                        .grand-container {<br>
+                                        display: grid;<br>
+                                        margin: 10px;<br>
+                                        gap: 10px;<br>
+                                        }
+                                        <br>
+                                    </div>
+                                </dd>
+                                <dd>
+                                    <div class="grand-container">
+                                        <div class="item" style="outline: 1px solid #683eef;">item </div>
+                                        <div class="item" style="outline: 1px solid #683eef;">item </div>
+                                        <div class="item" style="outline: 1px solid #683eef;">item </div>
+                                    </div>
+                                </dd>
+                                <dd>Элемент к которому применяется <span class="stroke">display: grid</span>. Это
+                                    прямой
+                                    родитель для всех
+                                    элементов сетки. В этом примере <span class="stroke">grid-container</span>
+                                    является контейнером.
+
+                                </dd>
+                            </dl>
+
+                            <dl>
+                                <dt><strong>Элемент сетки.</strong></dt>
+                                <dd>Дочерние элементы (прямые потомки) контейнера. На примере выше <span
+                                        class="stroke">item</span>
+                                    это
+                                    элемент сетки.
+                                </dd>
+                            </dl>
+
+                            <dl>
+                                <dt><strong>Линия сетки (Grid Line)</strong></dt>
+                                <dd>Разделительные линии, составляющие структуру для сетки. Они могут быть
+                                    вертикальными
+                                    (линии колонок) или
+                                    горизонтальными (линии строк) и располагаться по обе стороны от строки или
+                                    столбца.
+                                    На изображении синяя
+                                    линия является примером вертикальной линии (линией колонки). <br>
+                                    <br>
+                                    <img src="IMG/2.png" alt="2">
+                                </dd>
+                            </dl>
+                            <dl>
+                                <dt><strong>Трек сетки (Grid Track)</strong></dt>
+                                <dd>Пространство между двумя соседними линиями. Трек можно представить как строку
+                                    (колонка) или столбец
+                                    (ряд). Вот трек между второй и третей линией строк. <br>
+                                    <br>
+                                    <img src="IMG/3.png" alt="3">
+                                </dd>
+                            </dl>
+                            <dl>
+                                <dt><strong>Ячейка сетки (Grid Cell)</strong></dt>
+                                <dd>Пространство между линиями двух соседних строк и двух соседних столбцов. Это
+                                    отдельная единица измерения
+                                    сетки. Вот пример ячейки между линиями строк 1 и 2, линиями колонок 2 и 3. <br>
+                                    <br>
+                                    <img src="IMG/4.png" alt="4">
+                                </dd>
+                            </dl>
+                            <dl>
+                                <dt><strong>Область сетки (Grid Area)</strong></dt>
+                                <dd>Общее пространство окружённое четырьмя линиями. Область может состоять из любого
+                                    количества ячеек. Вот
+                                    пример области между строками 1 и 3 и колонками 1 и 3. <br>
+                                    <br>
+                                    <img src="IMG/5.png" alt="5">
+                                </dd>
+                            </dl>
+
+                            <dl>
+                                <dt>
+                                    <strong>Промежутки (gap) </strong>
+                                </dt>
+                                <dd>
+                                    <span>gap</span> задаёт расстояние (промежуток) между строками и колонками в
+                                    сетке.
+                                    Это удобно для создания равномерных отступов
+                                    между элементами без использования margin или padding на самих элементах. <br>
+                                    <br>
+                                    Свойство <span>gap</span> — это сокращённая запись для двух отдельных свойств:
+                                    <ul>
+                                        <li><span>row-gap</span> — промежуток между строками</li>
+                                        <li><span>column-gap</span> — промежуток между колонками.</li>
+                                    </ul>
+                                </dd>
+                                <dd>
+                                    <div class="ramka"> CSS<br>
+                                        .container { <br>
+                                        display: grid;<br>
+                                        gap: 10px 30px;<br>
+                                        /* 10px между строками, 30px между колонками */<br>
+                                        }
+                                        <br>
+                                    </div>
+                                </dd>
+                                <dd>
+                                    <img src="IMG/7.png" alt="7" class="pictures">
+                                </dd>
+                            </dl>
+
+                            <dl>
+                                <dt><strong>Как устроен grid контейнер</strong></dt>
+                                <dd><img src="IMG/6.png" alt="6" class="pictures"></dd>
+                            </dl>
+
+                            <li><a href="#Content">&lt;&lt;&lt;Содержание</a></li>
+                            <!--  -->
+                            <!--  -->
+                            <h2 id="title42">4.2 Сравнение с Flexbox</h2>
+                            <p>В отличие от Flex, которая ориентирована на одну ось, Grid оптимизирована для
+                                двумерных
+                                компоновок: когда
+                                требуется расположить (выровнять) содержимое в обоих измерениях (по вертикали и
+                                горизонтали).
+                            </p>
+                            <p> Кроме того, благодаря возможности явного позиционирования элементов в сетке, Grid
+                                позволяет выполнять
+                                кардинальные преобразования в структуре, не требуя никаких изменений HTML разметки.
+                                Комбинируя
+                                медиа-запросы со свойствами CSS, управляющими компоновкой контейнера grid и его
+                                дочерних
+                                элементов, можно
+                                адаптировать верстку под любые форм-факторы устройств.</p>
+
+                            <p> Grid и Flexbox, имеют свои особенности и нельзя сказать, что одно заменяет другое.
+                                Скорее Флекс является
+                                дополнением к Грид, или наоборот.
+                            </p>
+                            <p>Flexbox фокусируется на распределении пространства внутри одной оси, использует более
+                                простой подход к
+                                компоновке, может использовать систему упаковки строк на основе размера содержимого
+                                для
+                                управления своей
+                                вторичной осью и полагается на иерархию разметки. Тогда как Grid больше подходит для
+                                создания каркасов,
+                                потому что имеет более мощный и комплексный подход и в целом не зависит от иерархии
+                                разметки. В отдельных
+                                случаях Grid позволяет создать адаптивный макет, который невозможно создать с
+                                помощью
+                                Flex или как-то
+                                еще.</p>
+                            <dl>
+                                <dt>Flexbox - ориентируется по одной оси</dt>
+                                <dd><img src="IMG/flex.png" alt="7" class="pictures"></dd>
+                            </dl>
+                            <dl>
+                                <dt>CSS Grid - ориентируется по двум осям</dt>
+                                <dd><img src="IMG/grid.png" alt="8" class="pictures"></dd>
+                            </dl>
+
+                            <li><a href="#Content">&lt;&lt;&lt;Содержание</a></li>
+                            <!--  -->
+                            <!--  -->
+                            <h2 id="title43">4.3 Поддержка браузерами</h2>
+                            <p>В данный момент почти все современные браузеры поддерживают Grid CSS без
+                                необходимости
+                                указывать
+                                дополнительные префиксы и покрывают 97.94% всех устройств.</p>
+                            <a href="https://caniuse.com/#feat=css-grid" target="_blank">Посмотреть на сайте Can I
+                                use</a>
+                            <img src="IMG/caniuse.png" alt="9" class="pictures">
+
+                            <li><a href="#Content">&lt;&lt;&lt;Содержание</a></li>
+                            <!--  -->
+                            <!--  -->
+                            <h2 id="title5">5. Свойства грид-контейнера</h2>
+
+                            <a href="https://thecode.media/gid-po-css-grid/" target="_blank"
+                                rel="noopener noreferrer">Руководство
+                                по CSS Grid Layout — журнал «Код»</a> <br>
+                            <a href="https://code.mu/ru/markup/book/prime/grids/browser-debugger/" target="_blank"
+                                rel="noopener noreferrer">code.mu
+                                Введение в CSS гриды</a>
+
+                            <li><a href="#Content">&lt;&lt;&lt;Содержание</a></li>
+                            <!--  -->
+                            <!--  -->
+
+                            <dl>
+                                <dt>
+                                    <h3 id="title51">Отображение гридов в отладчике браузера</h3>
+                                </dt>
+                                <dd>
+                                    <p>При работе с гридами в процессе верстки сайта бывает нужно проверить
+                                        насколько
+                                        правильно
+                                        происходит расстановка
+                                        элементов в сетке. Кроме того, если у нас допущена ошибка мы должны
+                                        разобраться
+                                        с
+                                        какого
+                                        элемента идет неправильное
+                                        размещение. Для этой цели мы можем использовать отладчик в браузере. <br>
+                                        <br>
+                                        Давайте рассмотрим грид на примере отладчика в браузере Chrome. Вначале
+                                        выбираем
+                                        интересующий нас объект с грид и
+                                        кликнув правой кнопкой мыши выбираем из списка опцию 'Просмотреть код':
+                                    </p>
+                                    <img src="IMG/13.png" alt="13" class="pictures">
+                                    <p>Теперь разберём подробно, как именно создавать сетки.</p>
+                                </dd>
+                                <br>
+                                <dd>
+                                    <img src="IMG/14.png" alt="14" class="pictures">
+                                    <p>После того как нажали на кнопку grid, мы увидим, что наш объект отображается
+                                        в
+                                        визуально
+                                        понятной системе грид, с
+                                        указанием нумерации всех столбцов и рядов:</p>
+                                    <img src="IMG/15.png" alt="15" class="pictures">
+                                    <p>Теперь обратите внимание на панель в отладчике. В ней размещены вкладки
+                                        Styles,
+                                        Computed,
+                                        Layout и прочее. Переключитесь
+                                        с вкладки Styles, которая активна по умолчанию, на вкладку Layout. Вы
+                                        увидите
+                                        список
+                                        настроек вашего грида:</p>
+                                    <img src="IMG/16.png" alt="16" class="pictures">
+                                </dd>
+                            </dl>
+
+                            <li><a href="#Content">&lt;&lt;&lt;Содержание</a></li>
+                            <!--  -->
+                            <!--  -->
+                            <dl>
+                                <dt>
+                                    <h3 id="title52">Количество и ширина столбцов в CSS гридах</h3>
+                                </dt>
+                                <dd>Знакомство с работой в гриде мы начнем с того, что назначим количество и ширину
+                                    столбцов, по которым будут размещаться
+                                    дочерние элементы. Для этой цели мы используем свойство grid-template-columns,
+                                    которое указывается в элементе-родителе и
+                                    задает количество и ширину столбцов, которые будут занимать элементы-потомки в
+                                    гриде. В значении свойства указываем
+                                    ширину столбцов в пикселях.</dd>
+                            </dl>
+                            <br>
+
+                            <dl>
+                                <dt>
+                                    <h3>Пример 1</h3>
+                                </dt>
+                                <dd>
+                                    <p>Давайте вначале создадим родительский элемент и делаем его грид-контейнером.
+                                        Пусть у нас есть div, в котором
+                                        располагается четыре дочерних элемента. Зададим для него в свойстве display
+                                        значение grid, а в свойстве
+                                        grid-template-columns пропишем ширину для двух столбцов:</p>
+                                </dd>
+                                <br>
+                                <dd>
+                                    <div class="ramka"> HTML
+                                        <br>
+                                        <br>
+                                        <!--  -->
+                                        &lt;div id="parent"&gt;<br>
+                                        &emsp;&lt;div&gt;1&lt;/div&gt;<br>
+                                        &emsp;&lt;div&gt;2&lt;/div&gt;<br>
+                                        &emsp;&lt;div&gt;3&lt;/div&gt;<br>
+                                        &emsp;&lt;div&gt;4&lt;/div&gt;<br>
+                                        &lt;/div&gt;
+                                        <!--  -->
+                                        <br>
+                                    </div>
+                                </dd>
+                                <br>
+                                <dd>
+                                    <div class="ramka"> CSS
+                                        <br>
+                                        <br>
+                                        #parent {<br>
+                                        display: grid;<br>
+                                        grid-template-columns: 25% 75%;<br>
+                                        border: 2px solid #696989;<br>
+                                        padding: 10px;<br>
+                                        width: 100%;<br>
+                                        }<br>
+                                        #parent &gt; div {<br>
+                                        padding: 10px;<br>
+                                        border: 1px solid #696989;<br>
+                                        }
+                                        <br>
+                                    </div>
+                                </dd>
+                                <br>
+                                <dd>
+                                    <div id="parent">
+                                        <div>1</div>
+                                        <div>2</div>
+                                        <div>3</div>
+                                        <div>4</div>
+                                    </div>
+                                </dd>
+                            </dl>
+                            <!--  -->
+
+                            <dl>
+                                <dt>
+                                    <h3>Пример 2</h3>
+                                </dt>
+
+                                <dd>
+                                    <p>Теперь давайте создадим таблицу с четырьмя разными по размеру столбцами:</p>
+                                    <div class="ramka"> HTML
+                                        <br>
+                                        <br>
+                                        <!--  -->
+                                        &lt;div id="parent1"&gt;<br>
+                                        &emsp;&lt;div&gt;1&lt;/div&gt;<br>
+                                        &emsp;&lt;div&gt;2&lt;/div&gt;<br>
+                                        &emsp;&lt;div&gt;3&lt;/div&gt;<br>
+                                        &emsp;&lt;div&gt;4&lt;/div&gt;<br>
+                                        &emsp;&lt;div&gt;5&lt;/div&gt;<br>
+                                        &emsp;&lt;div&gt;6&lt;/div&gt;<br>
+                                        &emsp;&lt;div&gt;7&lt;/div&gt;<br>
+                                        &emsp;&lt;div&gt;8&lt;/div&gt;<br>
+                                        &lt;/div&gt;<br>
+                                        <!--  -->
+                                        <br>
+                                    </div>
+                                </dd>
+                                <br>
+                                <dd>
+                                    <div class="ramka"> CSS
+                                        <br>
+                                        <br>
+                                        #parent1 {<br>
+                                        display: grid;<br>
+                                        grid-template-columns: 10% 20% 30% 40%;<br>
+                                        border: 2px solid #696989;<br>
+                                        padding: 10px;<br>
+                                        width: 100%;<br>
+                                        }<br>
+                                        #parent1 &gt; div {<br>
+                                        padding: 10px;<br>
+                                        border: 1px solid #696989;<br>
+                                        }
+                                        <br>
+                                    </div>
+                                </dd>
+                                <br>
+                                <dd>
+                                    <div id="parent1">
+                                        <div>1</div>
+                                        <div>2</div>
+                                        <div>3</div>
+                                        <div>4</div>
+                                        <div>5</div>
+                                        <div>6</div>
+                                        <div>7</div>
+                                        <div>8</div>
+                                    </div>
+                                </dd>
+                            </dl>
+
+                            <li><a href="#Content">&lt;&lt;&lt;Содержание</a></li>
+                            <!--  -->
+                            <!--  -->
+                            <dl>
+                                <dt>
+                                    <h3 id="title53">Единица fr в CSS гридах</h3>
+                                </dt>
+                                <dd>
+                                    Размеры рядов и столбцов в гриде можно задавать не только в px, но и в единицах
+                                    гибкости fr (фракция). Использование
+                                    этих единиц означает, что все пространство для размещения элементов будет
+                                    разбито на
+                                    одинаковые доли или фракции. Каждый
+                                    элемент сможет взять определенную часть этого разбиения. Давайте посмотрим, как
+                                    это
+                                    делается. <br>
+                                    <br>
+                                    Давайте с помощью свойства grid-template-columns сделаем так, чтобы первый и
+                                    второй
+                                    столбцы грида заняли одну часть
+                                    контейнера, а третий столбец - три части:
+                                </dd>
+                                <br>
+                                <dd>
+                                    <div class="ramka"> HTML
+                                        <br>
+                                        <br>
+                                        &lt;div id="parent2"&gt;<br>
+                                        &emsp;&lt;div&gt;1&lt;/div&gt;<br>
+                                        &emsp;&lt;div&gt;2&lt;/div&gt;<br>
+                                        &emsp;&lt;div&gt;3&lt;/div&gt;<br>
+                                        &emsp;&lt;div&gt;4&lt;/div&gt;<br>
+                                        &emsp;&lt;div&gt;5&lt;/div&gt;<br>
+                                        &emsp;&lt;div&gt;6&lt;/div&gt;<br>
+                                        &emsp;&lt;div&gt;7&lt;/div&gt;<br>
+                                        &emsp;&lt;div&gt;8&lt;/div&gt;<br>
+                                        &emsp;&lt;div&gt;9&lt;/div&gt;<br>
+                                        &lt;/div&gt;
+                                        <br>
+                                    </div>
+                                </dd>
+                                <br>
+                                <dd>
+                                    <div class="ramka"> CSS
+                                        <br>
+                                        <br>
+                                        #parent2 {<br>
+                                        display: grid;<br>
+                                        grid-template-columns: <span class="span">1fr 1fr 3fr;</span><br>
+                                        border: 2px solid #696989;<br>
+                                        padding: 10px;<br>
+                                        width: 100%;<br>
+                                        }<br>
+                                        #parent &gt; div {<br>
+                                        padding: 10px;<br>
+                                        box-sizing: border-box;<br>
+                                        border: 1px solid #696989;<br>
+                                        }
+                                        <br>
+                                    </div>
+                                </dd>
+                                <br>
+                                <dd>
+                                    <div id="parent2">
+                                        <div>1</div>
+                                        <div>2</div>
+                                        <div>3</div>
+                                        <div>4</div>
+                                        <div>5</div>
+                                        <div>6</div>
+                                        <div>7</div>
+                                        <div>8</div>
+                                        <div>9</div>
+                                    </div>
+                                </dd>
+                            </dl>
+
+                            <li><a href="#Content">&lt;&lt;&lt;Содержание</a></li>
+                            <!--  -->
+                            <!--  -->
+                            <dl>
+                                <dt>
+                                    <h3 id="title54">Дробные единицы fr в CSS гридах</h3>
+                                </dt>
+                                <dd>
+                                    Значения, указанные в единицах fr, могут принимать дробный вид. Давайте изменим
+                                    предыдущий пример, указав для второго и
+                                    третьего столбца ширину в дробных числах:
+                                </dd>
+                                <br>
+                                <dd>
+                                    <div class="ramka"> HTML
+                                        <br>
+                                        <br>
+                                        &lt;div id="parent3"&gt;<br>
+                                        &emsp;&lt;div&gt;1&lt;/div&gt;<br>
+                                        &emsp;&lt;div&gt;2&lt;/div&gt;<br>
+                                        &emsp;&lt;div&gt;3&lt;/div&gt;<br>
+                                        &emsp;&lt;div&gt;4&lt;/div&gt;<br>
+                                        &emsp;&lt;div&gt;5&lt;/div&gt;<br>
+                                        &emsp;&lt;div&gt;6&lt;/div&gt;<br>
+                                        &emsp;&lt;div&gt;7&lt;/div&gt;<br>
+                                        &emsp;&lt;div&gt;8&lt;/div&gt;<br>
+                                        &emsp;&lt;div&gt;9&lt;/div&gt;<br>
+                                        &lt;/div&gt;
+                                        <br>
+                                    </div>
+                                </dd>
+                                <br>
+                                <dd>
+                                    <div class="ramka"> CSS
+                                        <br>
+                                        <br>
+                                        #parent3 {<br>
+                                        display: grid;<br>
+                                        grid-template-columns: 1fr 0.5fr 2.5fr;<br>
+                                        border: 2px solid #696989;<br>
+                                        padding: 10px;<br>
+                                        width: 100%;<br>
+                                        }<br>
+                                        #parent3 &gt; div {<br>
+                                        padding: 10px;<br>
+                                        border: 1px solid #696989;<br>
+                                        }
+                                        <br>
+                                    </div>
+                                </dd>
+                                <br>
+                                <dd>
+                                    <div id="parent3">
+                                        <div>1</div>
+                                        <div>2</div>
+                                        <div>3</div>
+                                        <div>4</div>
+                                        <div>5</div>
+                                        <div>6</div>
+                                        <div>7</div>
+                                        <div>8</div>
+                                        <div>9</div>
+                                    </div>
+                                </dd>
+                            </dl>
+
+                            <li><a href="#Content">&lt;&lt;&lt;Содержание</a></li>
+                            <!--  -->
+                            <!--  -->
+                            <dl>
+                                <dt>
+                                    <h3 id="title55">Функция repeat в CSS гридах</h3>
+                                </dt>
+                                <dd>
+                                    Если у вас несколько столбцов, для которых задаются одинаковые размеры, то можно
+                                    упростить запись, использовав функцию
+                                    repeat. В первом параметре этой функции указывается количество столбцов, а во
+                                    втором
+                                    - их ширина. Давайте посмотрим на
+                                    примерах, как это работает.
+                                </dd>
+                            </dl>
+                            <!--  -->
+                            <dl>
+                                <dt>
+                                    <h4>Пример 1</h4>
+                                </dt>
+                                <dd>
+                                    Пусть у нас есть три колонки одинакового размера:
+                                    <div class="ramka"> CSS
+                                        <br>
+                                        <br>
+                                        #parent {<br>
+                                        display: grid;<br>
+                                        grid-template-columns: 1fr 1fr 1fr;<br>
+                                        }
+                                        <br>
+                                    </div>
+                                    <p>Упростим запись с помощью <strong>repeat:</strong></p>
+                                    <div class="ramka"> CSS
+                                        <br>
+                                        <br>
+                                        #parent4 {<br>
+                                        display: grid;<br>
+                                        grid-template-columns: repeat(3, 1fr);<br>
+                                        }br
+                                        <br>
+                                        <br>
+                                        #parent4 &gt; div {<br>
+                                        padding: 10px;<br>
+                                        border: 1px solid #696989;<br>
+                                        }
+                                        <br>
+                                    </div>
+                                </dd>
+                                <dd>
+                                    <div id="parent4">
+                                        <div>1</div>
+                                        <div>2</div>
+                                        <div>3</div>
+                                        <div>4</div>
+                                        <div>5</div>
+                                        <div>6</div>
+                                        <div>7</div>
+                                        <div>8</div>
+                                        <div>9</div>
+                                    </div>
+                                </dd>
+                            </dl>
+
+                            <li><a href="#Content">&lt;&lt;&lt;Содержание</a></li>
+                            <!--  -->
+                            <!--  -->
+                            <dl>
+                                <dt>
+                                    <h4>Пример 2</h4>
+                                </dt>
+                                <dd>
+                                    Пусть у нас есть три колонки одинакового размера, а четвертая другого размера:
+                                    <div class="ramka"> CSS
+                                        <br>
+                                        <br>
+                                        #parent {<br>
+                                        display: grid;<br>
+                                        grid-template-columns: 1fr 1fr 1fr 2fr;<br>
+                                        }
+                                        <br>
+                                    </div>
+                                    <p>Упростим запись с помощью repeat:</p>
+                                    <div class="ramka"> CSS
+                                        <br>
+                                        <br>
+                                        #parent5 {<br>
+                                        display: grid;<br>
+                                        grid-template-columns: repeat(3, 1fr) 2fr;<br>
+                                        }<br>
+                                        <br>
+                                        #parent5 &gt; div {<br>
+                                        padding: 10px;<br>
+                                        border: 1px solid #696989;<br>
+                                        }
+                                        <br>
+                                    </div>
+                                </dd>
+                                <dd>
+                                    <div class="ramka"> HTML
+                                        <br>
+                                        <br>
+                                        &lt;div id="parent5"&gt;<br>
+                                        &emsp;&lt;div&gt;1&lt;/div&gt;<br>
+                                        &emsp;&lt;div&gt;2&lt;/div&gt;<br>
+                                        &emsp;&lt;div&gt;3&lt;/div&gt;<br>
+                                        &emsp;&lt;div&gt;4&lt;/div&gt;<br>
+                                        &emsp;&lt;div&gt;5&lt;/div&gt;<br>
+                                        &emsp;&lt;div&gt;6&lt;/div&gt;<br>
+                                        &emsp;&lt;div&gt;7&lt;/div&gt;<br>
+                                        &emsp;&lt;div&gt;8&lt;/div&gt;<br>
+                                        &lt;/div&gt;
+                                        <br>
+                                    </div>
+                                </dd>
+                                <dd>
+                                    <div id="parent5">
+                                        <div>1</div>
+                                        <div>2</div>
+                                        <div>3</div>
+                                        <div>4</div>
+                                        <div>5</div>
+                                        <div>6</div>
+                                        <div>7</div>
+                                        <div>8</div>
+                                    </div>
+                                </dd>
+                            </dl>
+
+                            <li><a href="#Content">&lt;&lt;&lt;Содержание</a></li>
+                            <!--  -->
+                            <!--  -->
+                            <dl>
+                                <dt>
+                                    <h3 id="title56">Значение auto в CSS гридах</h3>
+                                </dt>
+                                <dd>
+                                    <p>В гриде при указании размеров рядов и столбцов можно использовать значение
+                                        auto.
+                                        В этом случае, блоки просто заполнят
+                                        все доступное им свободное пространство за вычетом той ширины, которая
+                                        указана в
+                                        пикселях. Давайте посмотрим на
+                                        примерах. <br>
+                                        <br>
+                                        Давайте укажем первому и третьему столбцам фиксированную ширину в пикселях,
+                                        а
+                                        второй столбец пусть автоматически займет
+                                        оставшееся место:
+                                    </p>
+                                </dd>
+                                <dd>
+                                    <div class="ramka"> HTML
+                                        <br>
+                                        <br>
+                                        &lt;div id="parent6"&gt;<br>
+                                        &emsp;&lt;div&gt;1&lt;/div&gt;<br>
+                                        &emsp;&lt;div&gt;2&lt;/div&gt;<br>
+                                        &emsp;&lt;div&gt;3&lt;/div&gt;<br>
+                                        &emsp;&lt;div&gt;4&lt;/div&gt;<br>
+                                        &emsp;&lt;div&gt;5&lt;/div&gt;<br>
+                                        &emsp;&lt;div&gt;6&lt;/div&gt;<br>
+                                        &emsp;&lt;div&gt;7&lt;/div&gt;<br>
+                                        &emsp;&lt;div&gt;8&lt;/div&gt;<br>
+                                        &lt;/div&gt;
+                                        <br>
+                                    </div>
+                                    <!--  -->
+                                    <div class="ramka"> CSS
+                                        <br>
+                                        <br>
+                                        #parent6 {<br>
+                                        display: grid;<br>
+                                        grid-template-columns: 100px auto 150px;<br>
+                                        border: 2px solid #696989;<br>
+                                        padding: 10px;<br>
+                                        width: 100%;<br>
+                                        }<br>
+                                        <br>
+                                        #parent6&gt; div {<br>
+                                        padding: 10px;<br>
+                                        border: 1px solid #696989;<br>
+                                        }
+                                        <br>
+                                    </div>
+                                    <br>
+                                    <div id="parent6">
+                                        <div>1</div>
+                                        <div>2</div>
+                                        <div>3</div>
+                                        <div>4</div>
+                                        <div>5</div>
+                                        <div>6</div>
+                                        <div>7</div>
+                                        <div>8</div>
+                                    </div>
+                                </dd>
+                            </dl>
+
+                            <li><a href="#Content">&lt;&lt;&lt;Содержание</a></li>
+                            <!--  -->
+                            <!--  -->
+                            <dl>
+                                <dt>
+                                    <h3 id="title57">Значение auto-fill в CSS гридах</h3>
+                                </dt>
+                                <dd>
+                                    <p>Для установления размера одинаковых столбцов грид-контейнера очень удобно в
+                                        функции repeat указывать значение auto-fill,
+                                        благодаря которому наш контейнер заполнится одинаковыми столбцами нужной нам
+                                        ширины. <br>
+                                        <br>
+                                        Давайте сделаем таблицу из восьми элементов и зададим каждому столбцу
+                                        одинаковую
+                                        ширину в 200px. При этом, пусть
+                                        значение auto-fill само высчитает нужное количество столбцов:
+                                    </p>
+                                    <div class="ramka"> HTML
+                                        <br>
+                                        <br>
+                                        &lt;div id="parent7"&gt;<br>
+                                        &emsp;&lt;div&gt;1&lt;/div&gt;<br>
+                                        &emsp;&lt;div&gt;2&lt;/div&gt;<br>
+                                        &emsp;&lt;div&gt;3&lt;/div&gt;<br>
+                                        &emsp;&lt;div&gt;4&lt;/div&gt;<br>
+                                        &emsp;&lt;div&gt;5&lt;/div&gt;<br>
+                                        &emsp;&lt;div&gt;6&lt;/div&gt;<br>
+                                        &emsp;&lt;div&gt;7&lt;/div&gt;<br>
+                                        &emsp;&lt;div&gt;8&lt;/div&gt;<br>
+                                        &lt;/div&gt;
+                                        <br>
+                                    </div>
+                                    <!--  -->
+                                    <div class="ramka"> CSS
+                                        <br>
+                                        <br>
+                                        #parent7 {<br>
+                                        display: grid;<br>
+                                        grid-template-columns: repeat(auto-fill, 200px);<br>
+                                        border: 2px solid #696989;<br>
+                                        padding: 10px;<br>
+                                        }<br>
+                                        <br>
+                                        #parent7 &gt; div {<br>
+                                        padding: 10px;<br>
+                                        border: 1px solid #696989;<br>
+                                        }
+                                        <br>
+                                    </div>
+                                </dd>
+                                <dd>
+                                    <div id="parent7">
+                                        <div>1</div>
+                                        <div>2</div>
+                                        <div>3</div>
+                                        <div>4</div>
+                                        <div>5</div>
+                                        <div>6</div>
+                                        <div>7</div>
+                                        <div>8</div>
+                                    </div>
+                                </dd>
+                            </dl>
+
+                            <li><a href="#Content">&lt;&lt;&lt;Содержание</a></li>
+                            <!--  -->
+                            <!--  -->
+                            <dl>
+                                <h3 id="title58">Функция minmax в CSS гридах</h3>
+                                <dd>
+                                    <p>Очень удобно вместе с auto-fill указывать функцию minmax, которая задает
+                                        диапазон
+                                        ширины столбцов от минимального до
+                                        максимального значения. Если ширина контейнера не вмещает все столбцы, то их
+                                        некоторые из них переместятся на новую
+                                        строку, при этом столбцы в строке равномерно распределятся в ней. <br>
+                                        <br>
+                                        Давайте посмотрим на примере. Для того, чтобы увидеть разные варианты
+                                        размещения
+                                        столбцов изменяйте ширину страницы:
+                                    </p>
+                                    <div class="ramka"> HTML
+                                        <br>
+                                        <br>
+                                        &lt;div id="parent8"&gt;<br>
+                                        &emsp;&lt;div&gt;1&lt;/div&gt;<br>
+                                        &emsp;&lt;div&gt;2&lt;/div&gt;<br>
+                                        &emsp;&lt;div&gt;3&lt;/div&gt;<br>
+                                        &emsp;&lt;div&gt;4&lt;/div&gt;<br>
+                                        &emsp;&lt;div&gt;5&lt;/div&gt;<br>
+                                        &emsp;&lt;div&gt;6&lt;/div&gt;<br>
+                                        &emsp;&lt;div&gt;7&lt;/div&gt;<br>
+                                        &emsp;&lt;div&gt;8&lt;/div&gt;<br>
+                                        &lt;/div&gt;
+                                        <br>
+                                    </div>
+                                    <!--  -->
+                                    <div class="ramka"> CSS
+                                        <br>
+                                        <br>
+                                        #parent8 {<br>
+                                        display: grid;<br>
+                                        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));<br>
+                                        border: 2px solid #696989;<br>
+                                        padding: 10px;<br>
+                                        }<br>
+                                        <br>
+                                        #parent8 &gt; div {<br>
+                                        padding: 10px;<br>
+                                        border: 1px solid #696989;<br>
+                                        }
+                                        <br>
+                                    </div>
+                                </dd>
+                                <dd>
+                                    <div id="parent8">
+                                        <div>1</div>
+                                        <div>2</div>
+                                        <div>3</div>
+                                        <div>4</div>
+                                        <div>5</div>
+                                        <div>6</div>
+                                        <div>7</div>
+                                        <div>8</div>
+                                    </div>
+                                </dd>
+                            </dl>
+
+                            <li><a href="#Content">&lt;&lt;&lt;Содержание</a></li>
+                            <!--  -->
+                            <!--  -->
+                            <dl>
+                                <dt>
+                                    <h3 id="title59">Значение auto-fit в CSS гридах</h3>
+                                </dt>
+                                <dd>
+                                    <p>Теперь давайте рассмотрим значение auto-fit, которое также применяется при
+                                        указании столбцов одинакового размера
+                                        совместно с функцией repeat. Его отличие от значения <span>auto-fill</span>
+                                        заключается в
+                                        том, что <span>auto-fit</span> подгоняет количество
+                                        столбцов под доступную ширину контейнера, расширяя или сжимая их.</p>
+                                </dd>
+                            </dl>
+                            <!--  -->
+                            <dl>
+                                <dt>
+                                    <h4>Пример 1</h4>
+                                </dt>
+                                <dd>
+                                    <p>Давайте рассмотрим работу значения <strong>auto-fit</strong> на примере
+                                        контейнера с восьмью элементами. Применим вместе со значением
+                                        <strong>auto-fit</strong>
+                                        известную вам по предыдущему уроку функцию minmax:
+                                    </p>
+                                </dd>
+
+                                <dd>
+                                    <div class="ramka"> HTML
+                                        <br>
+                                        <br>
+                                        &lt;div id="parent9"&gt;<br>
+                                        &emsp;&lt;div&gt;1&lt;/div&gt;<br>
+                                        &emsp;&lt;div&gt;2&lt;/div&gt;<br>
+                                        &emsp;&lt;div&gt;3&lt;/div&gt;<br>
+                                        &emsp;&lt;div&gt;4&lt;/div&gt;<br>
+                                        &emsp;&lt;div&gt;5&lt;/div&gt;<br>
+                                        &emsp;&lt;div&gt;6&lt;/div&gt;<br>
+                                        &emsp;&lt;div&gt;7&lt;/div&gt;<br>
+                                        &emsp;&lt;div&gt;8&lt;/div&gt;<br>
+                                        &lt;/div&gt;
+                                        <br>
+                                    </div>
+                                </dd>
+
+                                <dd>
+                                    <div class="ramka"> CSS
+                                        <br>
+                                        <br>
+                                        #parent9 {<br>
+                                        display: grid;<br>
+                                        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));<br>
+                                        border: 2px solid #696989;<br>
+                                        padding: 10px;<br>
+                                        width: 100%;<br>
+                                        }<br>
+                                        <br>
+                                        #parent9 &gt; div {<br>
+                                        padding: 10px;<br>
+                                        border: 1px solid #696989;<br>
+                                        }
+                                        <br>
+                                    </div>
+                                </dd>
+                                <dd>
+                                    <div id="parent9">
+                                        <div>1</div>
+                                        <div>2</div>
+                                        <div>3</div>
+                                        <div>4</div>
+                                        <div>5</div>
+                                        <div>6</div>
+                                        <div>7</div>
+                                        <div>8</div>
+                                    </div>
+                                </dd>
+                            </dl>
+                            <br>
+
+                            <dl>
+                                <dt>
+                                    <h4>Пример 2</h4>
+                                </dt>
+                                <dd>
+                                    <p>Теперь давайте посмотрим, как изменится количество столбцов, если ширина
+                                        контейнера будет меньше, чем сумма ширин всех столбцов:</p>
+                                </dd>
+                                <br>
+
+                                <dd>
+                                    <div class="ramka"> CSS
+                                        <br>
+                                        <br>
+                                        #parent10 {<br>
+                                        display: grid;<br>
+                                        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));<br>
+                                        border: 2px solid #696989;<br>
+                                        padding: 10px;<br>
+                                        width: 400px;<br>
+                                        }<br>
+                                        <br>
+                                        #parent10 &gt; div {<br>
+                                        padding: 10px;<br>
+                                        border: 1px solid #696989;<br>
+                                        }
+                                        <br>
+
+                                    </div>
+                                    <div id="parent10">
+                                        <div>1</div>
+                                        <div>2</div>
+                                        <div>3</div>
+                                        <div>4</div>
+                                        <div>5</div>
+                                        <div>6</div>
+                                        <div>7</div>
+                                        <div>8</div>
+                                    </div>
+                                </dd>
+                            </dl>
+
+                            <li><a href="#Content">&lt;&lt;&lt;Содержание</a></li>
+                            <!--  -->
+                            <!--  -->
+                            <dl>
+                                <dt>
+                                    <h3 id="title510">Количество и ширина рядов в CSS гридах</h3>
+                                </dt>
+                                <dd>
+                                    <p>Количество и ширина рядов в CSS гридах</p>
+
+                                </dd>
+                            </dl>
+                            <!--  -->
+                            <dl>
+                                <dt>
+                                    <h4>Пример 1</h4>
+                                </dt>
+                                <dd>
+                                    <p>Для примера давайте разместим блоки в четыре ряда:</p>
+                                </dd>
+                                <dd>
+                                    <div class="ramka"> HTML
+                                        <br>
+                                        <br>
+                                        &lt;div id="parent11"&gt;<br>
+                                        &emsp;&lt;div&gt;1&lt;/div&gt;<br>
+                                        &emsp;&lt;div&gt;2&lt;/div&gt;<br>
+                                        &emsp;&lt;div&gt;3&lt;/div&gt;<br>
+                                        &emsp;&lt;div&gt;4&lt;/div&gt;<br>
+                                        &lt;/div&gt;
+                                        <br>
+                                    </div>
+                                    <br>
+                                    <div class="ramka"> CSS
+                                        <br>
+                                        <br>
+                                        #parent11 {<br>
+                                        display: grid;<br>
+                                        grid-template-rows: repeat(4, 50px);<br>
+                                        border: 2px solid #696989;<br>
+                                        padding: 10px;<br>
+                                        }
+                                        <br>
+                                        <br>
+                                        #parent11 &gt; div {<br>
+                                        padding: 10px;<br>
+                                        border: 1px solid #696989;<br>
+                                        }
+                                        <br>
+                                    </div>
+                                </dd>
+                                <dd>
+                                    <div id="parent11">
+                                        <div>1</div>
+                                        <div>2</div>
+                                        <div>3</div>
+                                        <div>4</div>
+                                    </div>
+                                </dd>
+                            </dl>
+                            <!--  -->
+                            <dl>
+                                <dt>
+                                    <h4>Пример 2</h4>
+                                </dt>
+                                <dd>
+                                    <p>Укажем для первого и третьего рядов фиксированную ширину в пикселях, а второй
+                                        ряд
+                                        пусть займет оставшееся место:</p>
+
+                                </dd>
+                                <dd>
+                                    <div class="ramka"> HTML
+                                        <br>
+                                        <br>
+                                        &lt;div id="parent12"&gt;<br>
+                                        &emsp;&lt;div&gt;1&lt;/div&gt;<br>
+                                        &emsp;&lt;div&gt;2&lt;/div&gt;<br>
+                                        &emsp;&lt;div&gt;3&lt;/div&gt;<br>
+                                        &lt;/div&gt;
+                                        <br>
+                                    </div>
+                                    <!--  -->
+                                    <div class="ramka"> CSS
+                                        <br>
+                                        <br>
+                                        #parent12 {<br>
+                                        display: grid;<br>
+                                        grid-template-rows: 100px auto 60px;<br>
+                                        border: 2px solid #696989;<br>
+                                        padding: 10px;<br>
+                                        width: 600px;<br>
+                                        height: 400px;<br>
+                                        }
+                                        <br>
+                                        <br>
+                                        #parent12 &gt; div {<br>
+                                        padding: 10px;<br>
+                                        border: 1px solid #696989;<br>
+                                        }
+                                        <br>
+                                    </div>
+                                </dd>
+                                <dd>
+                                    <div id="parent12">
+                                        <div>1</div>
+                                        <div>2</div>
+                                        <div>3</div>
+                                    </div>
+                                </dd>
+
+                            </dl>
+
+                            <li><a href="#Content">&lt;&lt;&lt;Содержание</a></li>
+                            <!--  -->
+                            <!--  -->
+                            <dl>
+                                <dt>
+                                    <h3 id="title511">Сокращение для рядов и столбцов в CSS гридах</h3>
+                                </dt>
+                                <dd>
+                                    Бывают ситуации, когда удобно указать размеры рядов и столбцов в краткой форме.
+                                    Для
+                                    этого мы используем свойство
+                                    grid-template, которое указывается в элементе-родителе и представляет собой
+                                    сокращенную форму записи двух свойств
+                                    grid-template-rows и grid-template-columns. <br>
+                                    <br>
+                                    Ряды и столбцы для грид-контейнера указываются через слеш, их размеры
+                                    определяются в
+                                    единицах измерения.
+                                </dd>
+                            </dl>
+                            <!--  -->
+                            <dl>
+                                <dt>
+                                    <h4>Пример 1</h4>
+                                </dt>
+                                <dd>
+                                    <p>Давайте создадим грид с тремя рядами и тремя столбцами:</p>
+                                </dd>
+                                <dd>
+                                    <div class="ramka"> HTML
+                                        <br>
+                                        <br>
+                                        &lt;div id="parent13"&gt;<br>
+                                        &emsp;&lt;div&gt;1&lt;/div&gt;<br>
+                                        &emsp;&lt;div&gt;2&lt;/div&gt;<br>
+                                        &emsp;&lt;div&gt;3&lt;/div&gt;<br>
+                                        &emsp;&lt;div&gt;4&lt;/div&gt;<br>
+                                        &emsp;&lt;div&gt;5&lt;/div&gt;<br>
+                                        &emsp;&lt;div&gt;6&lt;/div&gt;<br>
+                                        &emsp;&lt;div&gt;7&lt;/div&gt;<br>
+                                        &emsp;&lt;div&gt;8&lt;/div&gt;<br>
+                                        &emsp;&lt;div&gt;9&lt;/div&gt;<br>
+                                        &lt;/div&gt;
+                                        <br>
+                                    </div>
+                                </dd>
+                                <br>
+                                <!--  -->
+                                <dd>
+                                    <div class="ramka"> CSS
+                                        <br>
+                                        <br>
+                                        #parent13 {<br>
+                                        display: grid;<br>
+                                        grid-template:1fr 1fr 1fr / 1fr 1fr 1fr<br>
+                                        border: 2px solid #696989;<br>
+                                        padding: 10px;<br>
+                                        width: 600px;<br>
+                                        height: 400px;<br>
+                                        }
+                                        <br>
+                                        <br>
+                                        #parent13 &gt; div {<br>
+                                        padding: 10px;<br>
+                                        border: 1px solid #696989;<br>
+                                        }
+                                        <br>
+                                    </div>
+
+                                </dd>
+                                <dd>
+                                    <div id="parent13">
+                                        <div>1</div>
+                                        <div>2</div>
+                                        <div>3</div>
+                                        <div>4</div>
+                                        <div>5</div>
+                                        <div>6</div>
+                                        <div>7</div>
+                                        <div>8</div>
+                                        <div>9</div>
+                                    </div>
+                                </dd>
+
+                            </dl>
+                            <!--  -->
+                            <dl>
+                                <dt>
+                                    <h4>Пример 2</h4>
+                                </dt>
+                                <dd>
+                                    <p>А теперь давайте зададим второму и третьему рядам одинаковую ширину, а
+                                        каждому
+                                        столбцу - различную ширину:</p>
+                                </dd>
+                                <dd>
+                                    <div class="ramka"> CSS
+                                        <br>
+                                        <br>
+                                        #parent14 {<br>
+                                        display: grid;<br>
+                                        grid-template: 1fr 60px 60px / 20% 1fr 15%;<br>
+                                        border: 2px solid #696989;<br>
+                                        padding: 10px;<br>
+                                        width: 600px;<br>
+                                        height: 300px;<br>
+                                        }<br>
+                                        <br>
+                                        #parent14 &gt; div {<br>
+                                        padding: 10px;<br>
+                                        border: 1px solid #696989;<br>
+                                        }
+                                        <br>
+                                    </div>
+                                </dd>
+                                <!--  -->
+                                <dd>
+                                    <div id="parent14">
+                                        <div>1</div>
+                                        <div>2</div>
+                                        <div>3</div>
+                                        <div>4</div>
+                                        <div>5</div>
+                                        <div>6</div>
+                                        <div>7</div>
+                                        <div>8</div>
+                                        <div>9</div>
+                                    </div>
+                                </dd>
+                            </dl>
+
+                            <li><a href="#Content">&lt;&lt;&lt;Содержание</a></li>
+                            <!--  -->
+                            <!--  -->
+                            <dl>
+                                <dt>
+                                    <h3 id="title512">Объединение рядов в CSS гридах</h3>
+                                </dt>
+                                <dd>
+                                    <p>Ряды и колонки в гридах формируют сетку. Можно сделать так, чтобы элемент
+                                        занимал
+                                        не одну ячейку сетки, а несколько. <br>
+                                        <br>
+                                        Для того, чтобы элемент занял более одного ряда, ему следует задать свойство
+                                        grid-row. В этом свойстве через слеш
+                                        задаются числа, указывающее начальную и конечную позицию элементов в гриде.
+                                        <br>
+                                        <br>
+                                        При этом элемент растянется от первой позиции до второй позиции (не включая
+                                        ее).
+                                        To есть значение 1 / 2 заставит элемент
+                                        занять одну первую ячейку, а значение 1 / 3 заставит элемент занять первую и
+                                        вторую ячейку (но не включая третью).
+                                    </p>
+                                </dd>
+                                <dt>
+                                    <h4>Пример</h4>
+                                </dt>
+                                <dd>
+                                    <p>Пусть у нас есть грид с тремя дочерними элементами. Давайте разместим их так,
+                                        чтобы первый элемент занимал два ряда:</p>
+                                    <div class="ramka"> HTML
+                                        <br>
+                                        <br>
+                                        &lt;div id="parent15"&gt;<br>
+                                        &emsp;&lt;div id="elem1"&gt;1&lt;/div&gt;<br>
+                                        &emsp;&lt;div id="elem2"&gt;2&lt;/div&gt;<br>
+                                        &emsp;&lt;div id="elem3"&gt;3&lt;/div&gt;<br>
+
+                                        &lt;/div&gt;
+                                        <br>
+                                    </div>
+
+                                    <div class="ramka"> CSS
+                                        <br>
+                                        <br>
+                                        #parent15 {<br>
+                                        display: grid;<br>
+                                        grid-template-columns: 2fr 1fr;<br>
+                                        height: 300px;<br>
+                                        width: 400px;<br>
+                                        padding: 10px;<br>
+                                        border: 2px solid #696989;<br>
+                                        }<br>
+                                        <br>
+                                        #parent15 &gt; div {<br>
+                                        padding: 10px;<br>
+                                        border: 1px solid #696989;<br>
+                                        }<br>
+                                        <br>
+                                        #elem1 {<br>
+                                        grid-row: 1 / 3; /* два ряда */<br>
+                                        }<br>
+                                        <br>
+                                        #elem2 {<br>
+                                        grid-row: 1 / 2;<br>
+                                        }<br>
+                                        <br>
+                                        #elem3 {<br>
+                                        grid-row: 2 / 3;<br>
+                                        }
+                                        <br>
+                                    </div>
+                                </dd>
+                                <dd>
+                                    <div id="parent15">
+                                        <div id="elem1">1</div>
+                                        <div id="elem2">2</div>
+                                        <div id="elem3">3</div>
+                                    </div>
+                                </dd>
+                            </dl>
+                            <!--  -->
+                            <dl>
+                                <dt>Пример 2</dt>
+                                <dd>
+                                    <p>Теперь давайте назначим четвертому блоку три ряда:</p> <br>
+                                    <div class="ramka"> HTML
+                                        <br>
+                                        <br>
+                                        &lt;div id="parent16"&gt;<br>
+                                        &emsp;&lt;div id="elem4"&gt;1&lt;/div&gt;<br>
+                                        &emsp;&lt;div id="elem5"&gt;2&lt;/div&gt;<br>
+                                        &emsp;&lt;div id="elem6"&gt;3&lt;/div&gt;<br>
+                                        &emsp;&lt;div id="elem7"&gt;4&lt;/div&gt;<br>
+                                        &lt;/div&gt;
+                                        <br>
+                                    </div>
+                                    <br>
+                                    <div class="ramka"> CSS
+                                        <br>
+                                        <br>
+                                        #parent16 {<br>
+                                        display: grid;<br>
+                                        grid-template-columns: 2fr 1fr;<br>
+                                        height: 300px;<br>
+                                        width: 400px;<br>
+                                        padding: 10px;<br>
+                                        border: 2px solid #696989;<br>
+                                        }<br>
+                                        <br>
+                                        #parent16 &gt; div {<br>
+                                        padding: 10px;<br>
+                                        border: 1px solid #696989;<br>
+                                        }<br>
+                                        <br>
+                                        #elem4 {<br>
+                                        grid-row: 1 / 2;<br>
+                                        }<br>
+                                        <br>
+                                        #elem5 {<br>
+                                        grid-row: 2 / 3;<br>
+                                        }<br>
+                                        <br>
+                                        #elem6 {<br>
+                                        grid-row: 3 / 4;<br>
+                                        }<br>
+                                        <br>
+                                        #elem7 {<br>
+                                        grid-row: 1 / 4;<br>
+                                        }
+                                        <br>
+                                    </div>
+                                </dd>
+                                <dd>
+                                    <div id="parent16">
+                                        <div id="elem4">1</div>
+                                        <div id="elem5">2</div>
+                                        <div id="elem6">3</div>
+                                        <div id="elem7">4</div>
+                                    </div>
+                                </dd>
+                            </dl>
+                            <!--  -->
+                            <dl>
+                                <dt>Практические задачи</dt>
+                                <dd>
+                                    <p>Разместите все элементы и выполните объединение рядов в соответствии со
+                                        следующим
+                                        примером: <br>
+                                        <img src="IMG/17.png" alt="17" class="pictures2">
+                                    </p>
+                                <dd>
+                                    <div id="parent17">
+                                        <div id="elem8">1</div>
+                                        <div id="elem9">2</div>
+                                        <div id="elem10">3</div>
+                                        <div id="elem11">4</div>
+                                        <div id="elem12">5</div>
+                                    </div>
+                                </dd>
+                                <div class="ramka"> HTML
+                                    <br>
+                                    <br>
+                                    &lt;div id="parent17"&gt;<br>
+                                    &emsp;&lt;div id="elem8"&gt;1&lt;/div&gt;<br>
+                                    &emsp;&lt;div id="elem9"&gt;2&lt;/div&gt;<br>
+                                    &emsp;&lt;div id="elem10"&gt;3&lt;/div&gt;<br>
+                                    &emsp;&lt;div id="elem11"&gt;4&lt;/div&gt;<br>
+                                    &emsp;&lt;div id="elem12"&gt;5&lt;/div&gt;<br>
+                                    &lt;/div&gt;
+                                    <br>
+                                </div>
+                                <br>
+                                <div class="ramka"> CSS
+                                    <br>
+                                    <br>
+                                    #parent17 {<br>
+                                    display: grid;<br>
+                                    grid-template-columns: 1fr 1fr;<br>
+                                    height: 300px;<br>
+                                    width: 400px;<br>
+                                    padding: 10px;<br>
+                                    border: 2px solid #696989;<br>
+                                    }<br>
+                                    <br>
+                                    #parent17 &gt; div {<br>
+                                    padding: 10px;<br>
+                                    border: 1px solid #696989;<br>
+                                    }<br>
+                                    <br>
+                                    #elem8 {<br>
+                                    grid-row: 1 / 2;<br>
+                                    }<br>
+                                    <br>
+                                    #elem9 {<br>
+                                    grid-row: 2 / 3;<br>
+                                    }<br>
+                                    <br>
+                                    #elem10 {<br>
+                                    grid-row: 1 / 2;<br>
+                                    }<br>
+                                    <br>
+                                    #elem11 {<br>
+                                    grid-row: 2 / 4;<br>
+                                    }
+                                    <br>
+                                    <br>
+                                    #elem12 {<br>
+                                    grid-row: 3 / 4;<br>
+                                    }
+                                    <br>
+                                </div>
+                                </dd>
+
+                            </dl>
+
+                            <li><a href="#Content">&lt;&lt;&lt;Содержание</a></li>
+                            <!--  -->
+                            <!--  -->
+                            <dl>
+                                <dt>
+                                    <h3 id="title513">Объединение столбцов в CSS гридах</h3>
+                                <dd>
+                                    <p>Аналогичным образом можно объединять столбцы с помощью свойства grid-column.
+                                        <br>
+                                        <br>
+                                        Пусть у нас есть грид с четырьмя элементами. Теперь сделаем так, чтобы
+                                        первый,
+                                        второй и третий элементы располагались в
+                                        первом ряду. А четвертый элемент занимал весь второй ряд:
+                                    </p>
+                                    <div class="ramka"> HTML
+                                        <br>
+                                        <br>
+                                        &lt;div id="parent18"&gt;<br>
+                                        &emsp;&lt;div id="elem13"&gt;1&lt;/div&gt;<br>
+                                        &emsp;&lt;div id="elem14"&gt;2&lt;/div&gt;<br>
+                                        &emsp;&lt;div id="elem15"&gt;3&lt;/div&gt;<br>
+                                        &emsp;&lt;div id="elem16"&gt;4&lt;/div&gt;<br>
+                                        &lt;/div&gt;
+                                        <br>
+                                    </div>
+
+                                    <div class="ramka"> CSS
+                                        <br>
+                                        <br>
+                                        #parent18 {<br>
+                                        display: grid;<br>
+                                        padding: 10px;<br>
+                                        border: 2px solid #696989;<br>
+                                        width: 400px;<br>
+                                        height: 300px;<br>
+                                        }<br>
+                                        <br>
+                                        #parent18 &gt; div {<br>
+                                        padding: 10px;<br>
+                                        border: 1px solid #696989;<br>
+                                        }<br>
+                                        <br>
+                                        #elem13 {<br>
+                                        grid-column: 1 / 2;<br>
+                                        }<br>
+                                        <br>
+                                        #elem14 {<br>
+                                        grid-column: 2 / 3;<br>
+                                        }<br>
+                                        <br>
+                                        #elem15 {<br>
+                                        grid-column: 3 / 4;<br>
+                                        }<br>
+                                        <br>
+                                        #elem16 {<br>
+                                        grid-column: 1 / 4;<br>
+                                        }
+                                        <br>
+                                    </div>
+                                </dd>
+                                <dd>
+                                    <div id="parent18">
+                                        <div id="elem13">1</div>
+                                        <div id="elem14">2</div>
+                                        <div id="elem15">3</div>
+                                        <div id="elem16">4</div>
+                                    </div>
+                                </dd>
+                                </dt>
+                            </dl>
+                            <!--  -->
+                            <dl>
+                                <dt><strong>Практические задачи</strong></dt>
+                                <dd>
+                                    <p>Разместите все элементы и выполните объединение столбцов в соответствии со
+                                        следующим
+                                        примером: <br>
+                                        <img src="IMG/18.png" alt="18" class="pictures2">
+                                    </p>
+                                    <div id="parent19">
+                                        <div id="elem17">1</div>
+                                        <div id="elem18">2</div>
+                                        <div id="elem19">3</div>
+                                        <div id="elem20">4</div>
+                                    </div>
+                                </dd>
+                                <dd>
+                                    <div class="ramka"> HTML
+                                        <br>
+                                        <br>
+                                        &lt;div id="parent19"&gt;<br>
+                                        &emsp;&lt;div id="elem17"&gt;1&lt;/div&gt;<br>
+                                        &emsp;&lt;div id="elem18"&gt;2&lt;/div&gt;<br>
+                                        &emsp;&lt;div id="elem19"&gt;3&lt;/div&gt;<br>
+                                        &emsp;&lt;div id="elem20"&gt;4&lt;/div&gt;<br>
+                                        &lt;/div&gt;
+                                        <br>
+                                    </div>
+
+                                    <div class="ramka"> CSS
+                                        <br>
+                                        <br>
+                                        #parent19 {<br>
+                                        display: grid;<br>
+                                        padding: 10px;<br>
+                                        border: 2px solid #696989;<br>
+                                        width: 400px;<br>
+                                        height: 300px;<br>
+                                        }<br>
+                                        <br>
+                                        #parent19 &gt; div {<br>
+                                        padding: 10px;<br>
+                                        border: 1px solid #696989;<br>
+                                        }<br>
+                                        <br>
+                                        #elem17 {<br>
+                                        grid-column: 1 / 2;<br>
+                                        }<br>
+                                        <br>
+                                        #elem18 {<br>
+                                        grid-column: 2 / 4;<br>
+                                        }<br>
+                                        <br>
+                                        #elem19 {<br>
+                                        grid-column: 1 / 3;<br>
+                                        }<br>
+                                        <br>
+                                        #elem20 {<br>
+                                        grid-column: 3 / 4;<br>
+                                        }
+                                        <br>
+                                    </div>
+                                </dd>
+                            </dl>
+
+                            <li><a href="#Content">&lt;&lt;&lt;Содержание</a></li>
+                            <!--  -->
+                            <!--  -->
+                            <dl>
+                                <dt>
+                                    <h3 id="title514">Комбинации объединений по рядам и столбцам в CSS гридах</h3>
+                                </dt>
+                                <dd>
+                                    <p>Давайте рассмотрим различные типы объединений по рядам и столбцам.</p>
+                                </dd>
+                                <dt><strong>Пример 1</strong></dt>
+                                <dd>
+                                    <p>Cделаем таблицу, скомбинировав свойства grid-column и grid-row:</p>
+
+                                    <div class="ramka"> HTML
+                                        <br>
+                                        <br>
+                                        &lt;div id="parent20"&gt;<br>
+                                        &emsp;&lt;div id="elem21"&gt;1&lt;/div&gt;<br>
+                                        &emsp;&lt;div id="elem22"&gt;2&lt;/div&gt;<br>
+                                        &emsp;&lt;div id="elem23"&gt;3&lt;/div&gt;<br>
+                                        &emsp;&lt;div id="elem24"&gt;4&lt;/div&gt;<br>
+                                        &lt;/div&gt;
+                                        <br>
+                                    </div>
+
+                                    <div class="ramka"> CSS
+                                        <br>
+                                        <br>
+                                        #parent20 {<br>
+                                        display: grid;<br>
+                                        grid-template-columns: 2fr 1fr 1fr;<br>
+                                        border: 2px solid #696989;<br>
+                                        padding: 10px;<br>
+                                        height: 300px;<br>
+                                        width: 400px;<br>
+                                        }<br>
+                                        <br>
+                                        #parent20 &gt; div {<br>
+                                        padding: 10px;<br>
+                                        border: 1px solid #696989;<br>
+                                        }<br>
+                                        #elem20 {<br>
+                                        grid-row: 1 / 3;<br>
+                                        }<br>
+                                        #elem22 {<br>
+                                        grid-row: 1 / 2;<br>
+                                        }<br>
+                                        #elem23 {<br>
+                                        grid-row: 1 / 2;<br>
+                                        }<br>
+                                        #elem24 {<br>
+                                        grid-row: 2 / 3;<br>
+                                        grid-column: 2 / 4;<br>
+                                        }
+                                        <br>
+                                    </div>
+
+                                    <div id="parent20">
+                                        <div id="elem21">1</div>
+                                        <div id="elem22">2</div>
+                                        <div id="elem23">3</div>
+                                        <div id="elem24">4</div>
+                                    </div>
+                                </dd>
+                            </dl>
+
+                            <li><a href="#Content">&lt;&lt;&lt;Содержание</a></li>
+                            <!--  -->
+                            <!--  -->
+                            <dl>
+                                <dt>
+                                    <h3 id="title515">Перекрытие столбцов в CSS гридах</h3>
+                                </dt>
+                                <dd>
+                                    <p>В ситуации, когда несколько элементов занимают один и тот же столбец может
+                                        наблюдаться их перекрытие, при котором каждый
+                                        последующий элемент сдвигается на ряд ниже. <br>
+                                        <br>
+                                        Давайте в нашем гриде сделаем сделаем так, чтобы первый элемент расположился
+                                        в
+                                        первом ряду, второй - во втором, а третий
+                                        и четвертый - на третьем ряду:
+                                    </p>
+
+                                    <div class="ramka"> HTML
+                                        <br>
+                                        <br>
+                                        &lt;div id="parent21"&gt;<br>
+                                        &emsp;&lt;div id="elem25"&gt;1&lt;/div&gt;<br>
+                                        &emsp;&lt;div id="elem26"&gt;2&lt;/div&gt;<br>
+                                        &emsp;&lt;div id="elem27"&gt;3&lt;/div&gt;<br>
+                                        &emsp;&lt;div id="elem28"&gt;4&lt;/div&gt;<br>
+                                        &lt;/div&gt;
+                                        <br>
+                                    </div>
+
+                                    <div class="ramka"> CSS
+                                        <br>
+                                        <br>
+                                        #parent21 {<br>
+                                        display: grid;<br>
+                                        padding: 10px;<br>
+                                        border: 2px solid #696989;<br>
+                                        width: 400px;<br>
+                                        height: 300px;<br>
+                                        }<br>
+                                        #parent21 &gt; div {<br>
+                                        padding: 10px;<br>
+                                        border: 1px solid #696989;<br>
+                                        }<br>
+                                        #elem25 {<br>
+                                        grid-column: 1 / 4;<br>
+                                        }<br>
+                                        #elem26 {<br>
+                                        grid-column: 2 / 3;<br>
+                                        }<br>
+                                        #elem27 {<br>
+                                        grid-column: 1 / 2;<br>
+                                        }<br>
+                                        #elem28 {<br>
+                                        grid-column: 3 / 4;<br>
+                                        }
+                                        <br>
+                                    </div>
+                                </dd>
+                                <div id="parent21">
+                                    <div id="elem25">1</div>
+                                    <div id="elem26">2</div>
+                                    <div id="elem27">3</div>
+                                    <div id="elem28">4</div>
+                                </div>
+                                <dd></dd>
+                            </dl>
+
+                            <dl>
+                                <dt><strong>Практические задачи</strong></dt>
+                                <dd>
+                                    <p>Реализуйте следующий пример:</p>
+
+                                    <img src="IMG/19.png" alt="19" class="pictures2">
+
+                                <dd>
+                                    <div id="parent22">
+                                        <div id="elem29">1</div>
+                                        <div id="elem30">2</div>
+                                        <div id="elem31">3</div>
+                                    </div>
+                                </dd>
+
+                                <div class="ramka"> HTML
+                                    <br>
+                                    <br>
+                                    &lt;div id="parent22"&gt;<br>
+                                    &emsp;&lt;div id="elem29"&gt;1&lt;/div&gt;<br>
+                                    &emsp;&lt;div id="elem30"&gt;2&lt;/div&gt;<br>
+                                    &emsp;&lt;div id="elem31"&gt;3&lt;/div&gt;<br>
+                                    &lt;/div&gt;
+                                    <br>
+                                </div>
+
+                                <div class="ramka"> CSS
+                                    <br>
+                                    <br>
+                                    #parent22 {<br>
+                                    display: grid;<br>
+                                    padding: 10px;<br>
+                                    border: 2px solid #696989;<br>
+                                    width: 400px;<br>
+                                    height: 300px;<br>
+                                    }<br>
+                                    #parent22 &gt; div {<br>
+                                    padding: 10px;<br>
+                                    border: 1px solid #696989;<br>
+                                    }<br>
+                                    #elem29 {<br>
+                                    grid-column: 1 / 4;<br>
+                                    }<br>
+                                    #elem30 {<br>
+                                    grid-column: 2 / 3;<br>
+                                    }<br>
+                                    #elem31 {<br>
+                                    grid-column: 1 / 2;<br>
+                                    }<br>
+                                    <br>
+                                </div>
+                                </dd>
+                            </dl>
+
+                            <li><a href="#Content">&lt;&lt;&lt;Содержание</a></li>
+                            <!--  -->
+                            <!--  -->
+                            <dl>
+                                <dt>
+                                    <h3 id="title516">Расстояние между столбцами в CSS гридах</h3>
+                                </dt>
+                                <dd>
+                                    <p>Можно задать расстояние между столбцами сетки. Это делается с помощью
+                                        свойства
+                                        column-gap, которое задается в
+                                        элементе-родителе. <br>
+                                        <br>
+                                        Давайте зададим расстояние в пикселях между столбцами в гриде:
+                                    </p>
+
+                                    <div class="ramka"> HTML
+                                        <br>
+                                        <br>
+                                        <!--  -->
+                                        &lt;div id="parent23"&gt;<br>
+                                        &emsp;&lt;div&gt;1&lt;/div&gt;<br>
+                                        &emsp;&lt;div&gt;2&lt;/div&gt;<br>
+                                        &emsp;&lt;div&gt;3&lt;/div&gt;<br>
+                                        &emsp;&lt;div&gt;4&lt;/div&gt;<br>
+                                        &emsp;&lt;div&gt;5&lt;/div&gt;<br>
+                                        &emsp;&lt;div&gt;6&lt;/div&gt;<br>
+                                        &emsp;&lt;div&gt;7&lt;/div&gt;<br>
+                                        &emsp;&lt;div&gt;8&lt;/div&gt;<br>
+                                        &emsp;&lt;div&gt;9&lt;/div&gt;<br>
+                                        &lt;/div&gt;<br>
+                                    </div>
+                                    <br>
+                                    <!--  -->
+                                    <div class="ramka"> CSS
+                                        <br>
+                                        <br>
+                                        #parent23 {<br>
+                                        display: grid;<br>
+                                        column-gap: 20px;<br>
+                                        grid-template: 1fr 1fr 1fr / 1fr 1fr 1fr;<br>
+                                        padding: 10px;<br>
+                                        border: 2px solid #696989;<br>
+                                        width: 600px;<br>
+                                        height: 200px;<br>
+                                        }<br>
+                                        #parent23 &gt; div {<br>
+                                        padding: 10px;<br>
+                                        border: 1px solid #696989;<br>
+                                        }
+                                        <br>
+                                    </div>
+                                    <br>
+                                <dd>
+                                    <div id="parent23">
+                                        <div>1</div>
+                                        <div>2</div>
+                                        <div>3</div>
+                                        <div>4</div>
+                                        <div>5</div>
+                                        <div>6</div>
+                                        <div>7</div>
+                                        <div>8</div>
+                                        <div>9</div>
+                                    </div>
+                                </dd>
+                                </dd>
+
+                            </dl>
+
+                            <li><a href="#Content">&lt;&lt;&lt;Содержание</a></li>
+                            <!--  -->
+                            <!--  -->
+                            <dl>
+                                <dt>
+                                    <h3 id="title517">Расстояние между рядами в CSS гридах</h3>
+                                </dt>
+                                <dd>
+                                    <p>Можно также задать расстояние между рядами сетки. Это делается с помощью
+                                        свойства
+                                        row-gap, которое задается в
+                                        элементе-родителе. <br>
+                                        <br>
+                                        Давайте зададим расстояние между рядами в гриде:
+                                    </p>
+
+                                    <div class="ramka"> HTML
+                                        <br>
+                                        <br>
+                                        &lt;div id="parent24"&gt;<br>
+                                        &emsp;&lt;div&gt;1&lt;/div&gt;<br>
+                                        &emsp;&lt;div&gt;2&lt;/div&gt;<br>
+                                        &emsp;&lt;div&gt;3&lt;/div&gt;<br>
+                                        &lt;/div&gt;
+                                        <br>
+                                    </div>
+
+                                    <div class="ramka"> CSS
+                                        <br>
+                                        <br>
+                                        #parent24 {<br>
+                                        display: grid;<br>
+                                        row-gap: 10px;<br>
+                                        padding: 10px;<br>
+                                        border: 2px solid #696989;<br>
+                                        width: 600px;<br>
+                                        height: 200px;<br>
+                                        }<br>
+                                        #parent24 &gt; div {<br>
+                                        padding: 10px;<br>
+                                        border: 1px solid #696989;<br>
+                                        }
+                                        <br>
+                                    </div>
+
+                                    <div id="parent24">
+                                        <div>1</div>
+                                        <div>2</div>
+                                        <div>3</div>
+                                    </div>
+                                </dd>
+                            </dl>
+
+                            <li><a href="#Content">&lt;&lt;&lt;Содержание</a></li>
+                            <!--  -->
+                            <!--  -->
+                            <dl>
+                                <dt>
+                                    <h3 id="title518">Расстояние между столбцами и рядами в CSS гридах</h3>
+                                </dt>
+                                <dd>
+                                    <p>С помощью свойства gap можно одновременно задать расстояние между столбцами и
+                                        рядами грида.
+
+                                        Можно передать либо одно значение, либо два через пробел. Если передано одно
+                                        значение, оно задает одновременно
+                                        расстояние между столбцами и рядами. Если же передано два значения, то
+                                        первое
+                                        задает расстояние между рядами, а второе -
+                                        между столбцами. <br>
+                                        <br>
+                                    <h4>Пример</h4>
+                                    Зададим одинаковое расстояние между столбцами и рядами:</p>
+
+                                    <div class="ramka"> HTML
+                                        <br>
+                                        <br>
+                                        &lt;div id="parent25"&gt;<br>
+                                        &emsp;&lt;div&gt;1&lt;/div&gt;<br>
+                                        &emsp;&lt;div&gt;2&lt;/div&gt;<br>
+                                        &emsp;&lt;div&gt;3&lt;/div&gt;<br>
+                                        &emsp;&lt;div&gt;4&lt;/div&gt;<br>
+                                        &emsp;&lt;div&gt;5&lt;/div&gt;<br>
+                                        &emsp;&lt;div&gt;6&lt;/div&gt;<br>
+                                        &emsp;&lt;div&gt;7&lt;/div&gt;<br>
+                                        &emsp;&lt;div&gt;8&lt;/div&gt;<br>
+                                        &emsp;&lt;div&gt;9&lt;/div&gt;<br>
+                                        &lt;/div&gt;
+                                        <br>
+                                    </div>
+
+                                    <div class="ramka"> CSS
+                                        <br>
+                                        <br>
+                                        #parent25 {<br>
+                                        display: grid;<br>
+                                        gap: 10px;<br>
+                                        grid-template: 1fr 1fr 1fr / 1fr 1fr 1fr;<br>
+                                        padding: 10px;<br>
+                                        border: 2px solid #696989;<br>
+                                        width: 600px;<br>
+                                        height: 200px;<br>
+                                        }<br>
+                                        #parent25 &gt; div {<br>
+                                        padding: 10px;<br>
+                                        border: 1px solid #696989;<br>
+                                        }
+                                        <br>
+                                    </div>
+
+                                </dd>
+                                <dd>
+                                    <div id="parent25">
+                                        <div>1</div>
+                                        <div>2</div>
+                                        <div>3</div>
+                                        <div>4</div>
+                                        <div>5</div>
+                                        <div>6</div>
+                                        <div>7</div>
+                                        <div>8</div>
+                                        <div>9</div>
+                                    </div>
+                                </dd>
+                            </dl>
+                            <!--  -->
+                        </div>
+                        <!--  -->
+                    </div>
+
+                    <li><a href="#Content">&lt;&lt;&lt;Содержание</a></li>
+                    <!--  -->
+                    <!--  -->
+                </section>
+
+            </main>
+            <!--  -->
+            <!--  -->
+            <footer class="footer">
+                <p>Опубликовано: 7 ноября 2025</p>
+            </footer>
+        </div>
+        <!--  -->
+        <a href="#top" id="bottom">Вверх</a>
+    </div>
+
+
+
+
+
+
+
+    <br>
+    <br>
+    <br>
+
+</body>
+
+</html>
